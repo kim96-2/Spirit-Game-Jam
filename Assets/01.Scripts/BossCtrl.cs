@@ -56,7 +56,7 @@ public class BossCtrl : MonoBehaviour
             BossTxt.gameObject.SetActive(true);
             Color c = BossTxt.color;
             c.a = 0; BossTxt.color = c;
-            DOTween.To(() => BossTxt.color, x => BossTxt.color = x, new Color(c.r, c.g, c.b, 1f), 0.5f);
+            DOTween.To(() => BossTxt.color, x => BossTxt.color = x, new Color(c.r, c.g, c.b, 0.4f), 0.5f);
         }
 
         yield return new WaitForSeconds(2.0f);

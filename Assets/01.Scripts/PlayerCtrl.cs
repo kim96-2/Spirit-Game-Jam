@@ -23,6 +23,8 @@ public class PlayerCtrl : MonoBehaviour
 
     [Header("공격 관련")]
     public GameObject magicPrefab;
+    public GameObject SkillPrefab;
+
     public Transform firePoint;
 
     void Start()
@@ -95,6 +97,27 @@ public class PlayerCtrl : MonoBehaviour
                     Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
                     Instantiate(magicPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
                 }
+            }
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            float rayDistance;
+
+            if (groundPlane.Raycast(ray, out rayDistance))
+            {
+                Vector3 targetPosition = ray.GetPoint(rayDistance);
+                Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
+                Instantiate(SkillPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
             }
         }
     }// public void Attack()

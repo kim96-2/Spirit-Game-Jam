@@ -1526,6 +1526,7 @@ GameObject:
   - component: {fileID: 3677609001522610117}
   - component: {fileID: 1831384967829137151}
   - component: {fileID: 9156835993387808602}
+  - component: {fileID: 9156835993387808603}
   m_Layer: 0
   m_Name: Enemy_Test
   m_TagString: Enemy
@@ -1920,6 +1921,7 @@ MonoBehaviour:
   dashDuration: 0.5
   dashCooldown: 1
   magicPrefab: {fileID: 6690502405033429409, guid: 4f96e5ca258b42543815796f5277f40e, type: 3}
+  SkillPrefab: {fileID: 8728956983909618445, guid: 0f57a19e4fd5ee74383628d725265da9, type: 3}
   firePoint: {fileID: 2130683005}
 --- !u!33 &9078969729416129700
 MeshFilter:
@@ -1950,6 +1952,33 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &9156835993387808603
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168942114834562660}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &9190179926395723405
 Rigidbody:
   m_ObjectHideFlags: 0

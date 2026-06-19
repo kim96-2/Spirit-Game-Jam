@@ -5,13 +5,11 @@ public class Potan_Mgr : MonoBehaviour
     [Header("투사체 설정")]
     public float speed = 15.0f;
     public float damage = 20.0f;
-    public float lifeTime = 2.0f;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Destroy(gameObject, 3.0f); 
     }
 
     // Update is called once per frame
@@ -23,7 +21,7 @@ public class Potan_Mgr : MonoBehaviour
     {
         if (coll.CompareTag("Enemy"))
         {
-            Debug.Log("마법 적중)");
+            //Debug.Log("마법 적중)");
             Destroy(gameObject);
         }
 
