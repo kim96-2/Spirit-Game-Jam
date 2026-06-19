@@ -3,6 +3,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class BossCtrl : MonoBehaviour
 {
@@ -15,8 +16,14 @@ public class BossCtrl : MonoBehaviour
     public float introZoomSize = 3.5f;
     public float defaultZoomSize = 7f;
 
-    private bool isBattleStarted = false;
+    public GameObject BossTrigger;
 
+    public static BossCtrl Inst;
+
+    private void Awake()
+    {
+        Inst = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,7 +38,10 @@ public class BossCtrl : MonoBehaviour
         
     }
 
-
+    public void TriggerBossIntro()
+    {
+        StartCoroutine(BossIntroCo());
+    }
 
     IEnumerator BossIntroCo()
     {
@@ -60,12 +70,11 @@ public class BossCtrl : MonoBehaviour
 
         ReturnCameraToPlayer();
 
-        isBattleStarted = true;
+        //isBattleStarted = true;
     }
 
     public void ReturnCameraToPlayer()
     {
-        // ★ 씬에 있는 플레이어를 미리 알고 있으니 바로 사용!
         if (PlayerTransform != null)
         {
             mainBossCamera.Follow = PlayerTransform;

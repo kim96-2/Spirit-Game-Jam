@@ -7,8 +7,17 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 5.0f;
     private float defaultSpeed;       // 원래 속도 기억용
     public float dashSpeedMultiplier = 20.0f;
-    public float dashDuration = 2.0f; // 대시 유지 시간
     //public float dashCooldown = 2.0f; // 대시 쿨타임
+
+    [Header("대시 설정")]
+    public float dashSpeed = 100.0f;
+    public float dashDuration = 0.1f;
+    public float dashCooldown = 1.0f;
+
+    private float dashTimer;
+    private float dashCooldownTimer;
+    private Vector3 dashDirection;
+    private Vector3 lastMoveDirection; // 마지막 이동 방향 기억용
 
     //private float lastDashTime = -10f; // 마지막 대시 시간 저장
     private bool isDashing = false;
@@ -34,18 +43,48 @@ public class PlayerCtrl : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
         Vector3 moveInput = new Vector3(h, 0, v).normalized;
 
-        // 대시 입력 처리 (Space 키)
-        if (Input.GetKeyDown(KeyCode.Space)) //&& !isDashing)
+        // 1. 이동 방향 기록 (가만히 있을 때를 대비)
+        if (moveInput != Vector3.zero)
+            lastMoveDirection = moveInput;
+
+        // 2. 대시 쿨타임 감소
+        if (dashCooldownTimer > 0) dashCooldownTimer -= Time.deltaTime;
+
+        // 3. 대시 입력
+        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0 && !isDashing)
         {
-            //if (Time.time >= lastDashTime + dashCooldown)
-            //{
-            //    StartCoroutine(DashRoutine());
-            //}
-            StartCoroutine(DashRoutine());
+            StartDash(moveInput);
         }
 
-        // 이동 적용
+        // 4. 대시 중 이동 처리
+        if (isDashing)
+        {
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0)
+            {
+                isDashing = false;
+            }
+            else
+            {
+                // 속도감을 위해 moveSpeed가 아니라 dashSpeed를 즉시 적용
+                transform.position += dashDirection * dashSpeed * Time.deltaTime;
+                return;
+            }
+        }
+
+        // 일반 이동
         transform.position += moveInput * moveSpeed * Time.deltaTime;
+    }
+
+    void StartDash(Vector3 moveInput)
+    {
+        isDashing = true;
+        dashTimer = dashDuration;
+        dashCooldownTimer = dashCooldown; // 쿨타임 시작
+
+        // 입력 방향이 있으면 그쪽으로, 아니면 보던 방향으로!
+        dashDirection = moveInput != Vector3.zero ? moveInput : lastMoveDirection;
+        dashDirection.Normalize();
     }
 
     IEnumerator DashRoutine()
