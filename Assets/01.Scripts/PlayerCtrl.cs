@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    [Header("이동 및 대시 설정")]
+    private Rigidbody rb;
+    private Vector3 moveInput;
+
+    [Header("이동 설정")]
     public float moveSpeed = 5.0f;
-    private float defaultSpeed;       // 원래 속도 기억용
-    public float dashSpeedMultiplier = 20.0f;
-    //public float dashCooldown = 2.0f; // 대시 쿨타임
 
     [Header("대시 설정")]
     public float dashSpeed = 100.0f;
@@ -17,10 +17,9 @@ public class PlayerCtrl : MonoBehaviour
     private float dashTimer;
     private float dashCooldownTimer;
     private Vector3 dashDirection;
-    private Vector3 lastMoveDirection; // 마지막 이동 방향 기억용
-
-    //private float lastDashTime = -10f; // 마지막 대시 시간 저장
+    private Vector3 lastMoveDirection = Vector3.forward;
     private bool isDashing = false;
+
 
     [Header("공격 관련")]
     public GameObject magicPrefab;
@@ -28,81 +27,55 @@ public class PlayerCtrl : MonoBehaviour
 
     void Start()
     {
-        defaultSpeed = moveSpeed; // 게임 시작 시 기본 속도 저장
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        PlayerMove();
-        Attack();
-    }
-
-    public void PlayerMove()
-    {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        Vector3 moveInput = new Vector3(h, 0, v).normalized;
+        moveInput = new Vector3(h, 0, v).normalized;
 
-        // 1. 이동 방향 기록 (가만히 있을 때를 대비)
-        if (moveInput != Vector3.zero)
-            lastMoveDirection = moveInput;
+        if (moveInput != Vector3.zero) lastMoveDirection = moveInput;
 
-        // 2. 대시 쿨타임 감소
         if (dashCooldownTimer > 0) dashCooldownTimer -= Time.deltaTime;
 
-        // 3. 대시 입력
         if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0 && !isDashing)
         {
-            StartDash(moveInput);
+            StartDash();
         }
 
-        // 4. 대시 중 이동 처리
+        Attack();
+    }//void Update()
+    
+    void FixedUpdate()
+    {
         if (isDashing)
         {
-            dashTimer -= Time.deltaTime;
+            dashTimer -= Time.fixedDeltaTime;
             if (dashTimer <= 0)
             {
                 isDashing = false;
             }
             else
             {
-                // 속도감을 위해 moveSpeed가 아니라 dashSpeed를 즉시 적용
-                transform.position += dashDirection * dashSpeed * Time.deltaTime;
+                Vector3 targetPos = rb.position + (dashDirection * dashSpeed * Time.fixedDeltaTime);
+                rb.MovePosition(targetPos);
                 return;
             }
-        }
+        }//if (isDashing)
 
-        // 일반 이동
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
-    }
+        Vector3 movePos = rb.position + (moveInput * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(movePos);
+    }//void FixedUpdate()
 
-    void StartDash(Vector3 moveInput)
+    void StartDash()
     {
         isDashing = true;
         dashTimer = dashDuration;
-        dashCooldownTimer = dashCooldown; // 쿨타임 시작
-
-        // 입력 방향이 있으면 그쪽으로, 아니면 보던 방향으로!
+        dashCooldownTimer = dashCooldown;
         dashDirection = moveInput != Vector3.zero ? moveInput : lastMoveDirection;
-        dashDirection.Normalize();
-    }
-
-    IEnumerator DashRoutine()
-    {
-        isDashing = true;
-        //lastDashTime = Time.time;
-
-        // 대시 방향으로 속도 고정 (이동 입력 무시)
-        Vector3 dashDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-        if (dashDirection == Vector3.zero) dashDirection = transform.forward; // 입력이 없으면 앞방향
-
-        moveSpeed *= dashSpeedMultiplier;
-
-        yield return new WaitForSeconds(dashDuration);
-
-        moveSpeed = defaultSpeed;
-        isDashing = false;
-    }
+    }// void StartDash()
 
     public void Attack()
     {
@@ -110,8 +83,19 @@ public class PlayerCtrl : MonoBehaviour
         {
             if (magicPrefab != null && firePoint != null)
             {
-                Instantiate(magicPrefab, firePoint.position, firePoint.rotation);
+                Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                float rayDistance;
+
+                if (groundPlane.Raycast(ray, out rayDistance))
+                {
+                    Vector3 targetPosition = ray.GetPoint(rayDistance);
+                    Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
+                    Instantiate(magicPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
+                }
             }
         }
-    }
+    }// public void Attack()
 }
