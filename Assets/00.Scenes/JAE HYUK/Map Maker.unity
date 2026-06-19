@@ -557,9 +557,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41a6376b03f1fe4698106485de1cf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCtrl
-  moveSpeed: 10
+  moveSpeed: 30
   dashSpeedMultiplier: 20
+  dashSpeed: 100
   dashDuration: 2
+  dashCooldown: 1
   magicPrefab: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!1 &1905429818
