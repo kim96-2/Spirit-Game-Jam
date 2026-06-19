@@ -24,6 +24,18 @@ public class PlayerCtrl : MonoBehaviour
     [Header("공격 관련")]
     public GameObject magicPrefab;
     public GameObject SkillPrefab;
+    public GameObject BiiimPrefab;
+
+    float ultimateDuration = 5.0f;
+    float beamRotationSpeed = 150.0f;
+    float ultimateCooldown = 20.0f;
+
+    GameObject activeBeam;
+    bool isUltimateActive = false;
+    float ultimateCooldownTimer;
+
+    float m_AttackTimer = 0.0f;
+    float m_SkillTimer = 0.0f;
 
     public Transform firePoint;
 
@@ -42,10 +54,13 @@ public class PlayerCtrl : MonoBehaviour
 
         if (dashCooldownTimer > 0) dashCooldownTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0 && !isDashing)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTimer <= 0 && !isDashing)
         {
             StartDash();
         }
+
+        if (ultimateCooldownTimer > 0) 
+            ultimateCooldownTimer -= Time.deltaTime;
 
         Attack();
     }//void Update()
@@ -81,7 +96,10 @@ public class PlayerCtrl : MonoBehaviour
 
     public void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        m_AttackTimer -= Time.deltaTime;
+        m_SkillTimer -= Time.deltaTime;
+
+        if (m_AttackTimer <= 0.0f)
         {
             if (magicPrefab != null && firePoint != null)
             {
@@ -98,14 +116,11 @@ public class PlayerCtrl : MonoBehaviour
                     Instantiate(magicPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
                 }
             }
+
+            m_AttackTimer = 0.5f; 
         }
 
-        if (Input.GetMouseButton(0))
-        {
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButton(0) && m_SkillTimer <= 0.0f)
         {
             Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
 
@@ -119,6 +134,64 @@ public class PlayerCtrl : MonoBehaviour
                 Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
                 Instantiate(SkillPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
             }
+
+            m_SkillTimer = 7.0f;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) && ultimateCooldownTimer <= 0 && !isUltimateActive)
+        {
+            StartCoroutine(UltimateRoutine());
+        }
+
+        if (isUltimateActive && activeBeam != null)
+        {
+            RotateUltimateBeam();
+        }
+
     }// public void Attack()
+
+    IEnumerator UltimateRoutine()
+    {
+        isUltimateActive = true;
+        ultimateCooldownTimer = ultimateCooldown;
+
+        activeBeam = Instantiate(BiiimPrefab, firePoint.position, firePoint.rotation);
+        activeBeam.transform.SetParent(firePoint);
+        activeBeam.transform.localPosition = Vector3.zero;
+
+        yield return new WaitForSeconds(ultimateDuration);
+
+        if (activeBeam != null)
+        {
+            Destroy(activeBeam);
+        }
+
+        isUltimateActive = false;
+    }
+
+    void RotateUltimateBeam()
+    {
+        if (activeBeam == null || firePoint == null) return;
+
+        Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float rayDistance;
+
+        if (groundPlane.Raycast(ray, out rayDistance))
+        {
+            Vector3 targetPosition = ray.GetPoint(rayDistance);
+
+            Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
+
+            launchDirection.y = 0;
+
+            if (launchDirection != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(launchDirection);
+
+                activeBeam.transform.rotation = targetRotation;
+
+            }
+        }
+    }
 }

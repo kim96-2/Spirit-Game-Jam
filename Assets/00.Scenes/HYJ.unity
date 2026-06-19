@@ -1922,6 +1922,7 @@ MonoBehaviour:
   dashCooldown: 1
   magicPrefab: {fileID: 6690502405033429409, guid: 4f96e5ca258b42543815796f5277f40e, type: 3}
   SkillPrefab: {fileID: 8728956983909618445, guid: 0f57a19e4fd5ee74383628d725265da9, type: 3}
+  BiiimPrefab: {fileID: 4287554968653457460, guid: 28baa3963607b2b4889df7179cae1016, type: 3}
   firePoint: {fileID: 2130683005}
 --- !u!33 &9078969729416129700
 MeshFilter:
