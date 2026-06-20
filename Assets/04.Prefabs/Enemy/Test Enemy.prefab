@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Shooter
   hp: 100
+  destroyParticle: {fileID: 0}
   shooter: {fileID: 8513312428459712627}
 --- !u!114 &8513312428459712627
 MonoBehaviour:

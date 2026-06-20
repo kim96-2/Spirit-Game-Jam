@@ -119,163 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &251749674
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250756272951767615, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1753008674958574351, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3222770767727969000, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: m_Name
-      value: Spirit Preset Blue (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_BurstCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].cycleCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].probability
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].repeatInterval
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_PreInfinity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_PreInfinity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_PostInfinity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_PostInfinity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_RotationOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439669179422359854, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2e70b11848ea76c46bb2213fb8f767ea, type: 3}
 --- !u!1 &530468038
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,8 +539,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817431243}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3522757, y: 0.0037450874, z: -0.0014099478, w: 0.9358877}
-  m_LocalPosition: {x: -0.39881897, y: 5.2088914, z: -4.681751}
+  m_LocalRotation: {x: 0.40318865, y: 0.0018300245, z: -0.00080642075, w: 0.9151147}
+  m_LocalPosition: {x: -0.2211962, y: 4.3610463, z: -9.60725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -779,6 +622,234 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1001 &117753939395069794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447560180265675503, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108943641445898577, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset Blue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
+--- !u!1001 &1728393479541190055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5558852886612451598, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset Purpple
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304106675361309963, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aaa5a8f5652034d4da7f53fc90b0f34f, type: 3}
+--- !u!1001 &1890736959254592348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1127507068105547451, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701043198076649714, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c64085e70f3606489bb7f26dbfda7f6, type: 3}
+--- !u!1001 &2370421312335704385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5862484323409898893, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset BlueGray
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288720044031351647, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f70df62653d194541b53cdfc228e57fa, type: 3}
 --- !u!1001 &2583423714307549107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -836,6 +907,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23610f196217095489b723ca73f3a356, type: 3}
+--- !u!1001 &3332000838924210193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4957392624515577797, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895587378290032336, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ded650083e5debd41bc273f4314ad85a, type: 3}
 --- !u!1001 &3352509722150188184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1007,6 +1135,120 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e30e075947a76e468e23e486277c35f, type: 3}
+--- !u!1001 &5840065007549326197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559423457931822997, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934624272866407058, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset Green
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1f450f9e89028049b826f1a77a68325, type: 3}
+--- !u!1001 &5861350451041022249
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806805310619603457, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3556366306839216680, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset BloodRed
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78d7bc06bbe6bd64f9b351e9706dd9d6, type: 3}
 --- !u!1001 &5923210131723668380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1064,6 +1306,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c91756e7700bca49801d3b4048e284b, type: 3}
+--- !u!1001 &7536455719879915717
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3636055797475072154, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_Name
+      value: Spirit Explode Preset Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979413892051021482, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c5f5585c22e57d4f9bd48ddda8faf23, type: 3}
 --- !u!1001 &8288276221957221332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1244,7 +1543,6 @@ SceneRoots:
   - {fileID: 671582344}
   - {fileID: 530468042}
   - {fileID: 8307461649555479082}
-  - {fileID: 251749674}
   - {fileID: 3789148685113120440}
   - {fileID: 5923210131723668380}
   - {fileID: 3352509722150188184}
@@ -1252,3 +1550,11 @@ SceneRoots:
   - {fileID: 2583423714307549107}
   - {fileID: 5229756059623662921}
   - {fileID: 8288276221957221332}
+  - {fileID: 117753939395069794}
+  - {fileID: 1728393479541190055}
+  - {fileID: 2370421312335704385}
+  - {fileID: 5840065007549326197}
+  - {fileID: 3332000838924210193}
+  - {fileID: 5861350451041022249}
+  - {fileID: 7536455719879915717}
+  - {fileID: 1890736959254592348}

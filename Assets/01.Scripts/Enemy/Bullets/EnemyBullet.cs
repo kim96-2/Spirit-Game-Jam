@@ -1,4 +1,5 @@
 using Game.Core;
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(PoolObject))]
@@ -8,6 +9,7 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] float damageAmount = 10f;
     [SerializeField] float destroyDuration = 10f;
+    [SerializeField] GameObject destroyParticle;
 
     PoolObject poolObject;
     protected Rigidbody rigidbody;
@@ -55,6 +57,11 @@ public class EnemyBullet : MonoBehaviour
 
     public virtual void DestroyBullet()
     {
+        if(destroyParticle != null)
+        {
+            ObjectPoolManager.Instance.Get(destroyParticle, transform.position, quaternion.identity);
+        }
+
         poolObject.Release();
     }
 

@@ -1,4 +1,6 @@
 using System;
+using Game.Core;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,6 +9,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float hp = 100f;
+    [SerializeField] GameObject destroyParticle;
     
     protected NavMeshAgent navMeshAgent;
     protected Transform target;
@@ -59,6 +62,8 @@ public class Enemy : MonoBehaviour
         currentMap.EnemyDestroyed();
 
         OnEnemyDestroyed?.Invoke();
+
+        if(destroyParticle != null) ObjectPoolManager.Instance.Get(destroyParticle, transform.position, quaternion.identity);
 
         Destroy(this.gameObject);
     }
