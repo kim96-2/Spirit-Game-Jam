@@ -189,7 +189,7 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         // [궁극기 공격] 
-        if (Input.GetKeyDown(KeyCode.Space) && ultimateCooldownTimer <= 0 && !isUltimateActive && Game_Mg.IsPointerOverUIObject() == false)
+        if (Input.GetMouseButtonDown(1) && ultimateCooldownTimer <= 0 && !isUltimateActive && Game_Mg.IsPointerOverUIObject() == false)
         {
             ultimateCooldownTimer = ultimateCooldown; // 즉시 최대 쿨타임 적용!
             StartCoroutine(UltimateRoutine());
