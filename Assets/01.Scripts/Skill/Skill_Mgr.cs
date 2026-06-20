@@ -34,17 +34,17 @@ public class Skill_Mgr : MonoBehaviour
         skillDatabase.Add(new SkillData(SkillID.Normal_MultiShot, "혼령탄 동시에 한발 더", "혼령탄이 1개 추가로 나갑니다 (최대 5개)", SkillRarity.Bronze, 5));
         skillDatabase.Add(new SkillData(SkillID.Normal_Damage, "더 강력한 혼령탄", "혼령탄 위력이 증가합니다", SkillRarity.Bronze, 3));
         skillDatabase.Add(new SkillData(SkillID.Normal_Size, "큰 혼령탄", "혼령탄 크기가 증가합니다", SkillRarity.Bronze, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_WallBounce, "반사 혼령탄", "혼령탄이 벽에 1회 반사됩니다", SkillRarity.Gold, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Boomerang, "부메랑 혼령탄", "부메랑탄환으로 변경됩니다", SkillRarity.Silver, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Penetration, "혼령탄 관통", "관통탄으로 변경됩니다", SkillRarity.Gold, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Guided, "유도혼령탄", "20%확률로 유도탄이 나갑니다", SkillRarity.Bronze, 2));
+        //skillDatabase.Add(new SkillData(SkillID.Normal_WallBounce, "반사 혼령탄", "혼령탄이 벽에 1회 반사됩니다", SkillRarity.Gold, 1));
+        //skillDatabase.Add(new SkillData(SkillID.Normal_Boomerang, "부메랑 혼령탄", "부메랑탄환으로 변경됩니다", SkillRarity.Silver, 1));
+        //skillDatabase.Add(new SkillData(SkillID.Normal_Penetration, "혼령탄 관통", "관통탄으로 변경됩니다", SkillRarity.Gold, 1));
+        //skillDatabase.Add(new SkillData(SkillID.Normal_Guided, "유도혼령탄", "20%확률로 유도탄이 나갑니다", SkillRarity.Bronze, 2));
 
         // 스킬 공격 업그레이드
         skillDatabase.Add(new SkillData(SkillID.Skill_Cooldown, "더 빠른 영혼절단", "영혼절단 쿨타임이 감소합니다", SkillRarity.Bronze, 3));
         skillDatabase.Add(new SkillData(SkillID.Skill_Damage, "더 강력한 영혼절단", "영혼절단이 더 강력해집니다", SkillRarity.Bronze, 3));
         skillDatabase.Add(new SkillData(SkillID.Skill_Range, "더 큰 영혼절단", "영혼절단 공격범위가 증가합니다", SkillRarity.Bronze, 3));
-        skillDatabase.Add(new SkillData(SkillID.Skill_WallBounce, "영혼절단 반사", "영혼절단이 벽에 1회 반사됩니다", SkillRarity.Gold, 1));
-        skillDatabase.Add(new SkillData(SkillID.Skill_Boomerang, "영혼절단 부메랑", "영혼절단이 부메랑처럼 돌아옵니다", SkillRarity.Silver, 1));
+        //skillDatabase.Add(new SkillData(SkillID.Skill_WallBounce, "영혼절단 반사", "영혼절단이 벽에 1회 반사됩니다", SkillRarity.Gold, 1));
+        //skillDatabase.Add(new SkillData(SkillID.Skill_Boomerang, "영혼절단 부메랑", "영혼절단이 부메랑처럼 돌아옵니다", SkillRarity.Silver, 1));
         skillDatabase.Add(new SkillData(SkillID.Skill_Split, "영혼절단 한번에 두개", "영혼절단이 두갈래로 나갑니다", SkillRarity.Gold, 1));
 
         // 궁극기 업그레이드
