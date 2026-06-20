@@ -834,7 +834,7 @@ MonoBehaviour:
   - {fileID: 8574334070079709840, guid: 5ca88470f7dbc2b4c883328069c504bc, type: 3}
   - {fileID: 8574334070079709840, guid: 1b40fed2e41731e4aaef65949b8a4b77, type: 3}
   - {fileID: 8574334070079709840, guid: be5f92619d9051e46944a0703e6a6c65, type: 3}
-  enemySpawnCount: 2
+  enemySpawnCount: 20
   waitSeconds: 3
 --- !u!114 &1491212550416657057
 MonoBehaviour:
