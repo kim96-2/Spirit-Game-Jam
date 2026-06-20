@@ -42,7 +42,7 @@ public class Potan_Mgr : MonoBehaviour
             if (enemy != null)
             {
                 isDestroyed = true;
-
+                 
                 if (CameraEffect.Inst != null)
                 {
                     CameraEffect.Inst.PlayHitEffect(m_SlowDuration, m_SlowTimeScale, 55f);

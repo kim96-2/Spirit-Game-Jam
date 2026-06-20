@@ -160,7 +160,7 @@ public class PlayerCtrl : MonoBehaviour
                 SpawnNormalProjectiles(launchDirection);
             }
             else
-            {
+            {   
                 SpawnNormalProjectiles(transform.forward);
             }
 
@@ -335,6 +335,13 @@ public class PlayerCtrl : MonoBehaviour
             return;
 
         playerCurrentHp -= amount;
+
+
+
+        if (Game_Mg.Inst != null)
+        {
+            Game_Mg.Inst.m_Player_Hon.fillAmount = playerCurrentHp / playerMaxHp;
+        }
     }
 
     public void ApplySkillUpgrade(SkillID id)

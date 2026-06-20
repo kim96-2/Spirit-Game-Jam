@@ -121,14 +121,13 @@ public class Skill_Mgr : MonoBehaviour
 
         // 1. 기획서 규칙: 해당 스킬 획득 카운트 1 증가
         currentCardData.currentCount++;
-        Debug.Log($"[스킬 선택 완료] {currentCardData.skillName} (현재 {currentCardData.currentCount}/{currentCardData.maxCount}개 적용됨)");
+       // Debug.Log($"[스킬 선택 완료] {currentCardData.skillName} (현재 {currentCardData.currentCount}/{currentCardData.maxCount}개 적용됨)");
 
         if (PlayerCtrl.Inst != null)
         {
             PlayerCtrl.Inst.ApplySkillUpgrade(currentCardData.id);
         }
 
-        // 2. 싱글톤 매니저를 호출해 UI 창을 닫고 시간 재생
         if (Game_Mg.Inst != null)
         {
             Game_Mg.Inst.CloseSkillChoices();

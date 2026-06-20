@@ -51,6 +51,5 @@ public class SkillData
     }
 
     // 아직 더 뽑을 수 있는지 확인하는 함수
-    public bool CanAvailable => currentCount < maxCount && currentCount >= 1;
-   // public bool CanAvailable => currentCount < maxCount;
+    public bool CanAvailable => currentCount < maxCount;
 }

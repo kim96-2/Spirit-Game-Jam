@@ -23,6 +23,9 @@ public class Game_Mg : MonoBehaviour
     float m_CurrentPlayerHon;
     float m_MonsterHon = 10.0f;
 
+    [Header("중앙 스킬 데이터베이스")]
+    public List<SkillData> masterSkillDatabase = new List<SkillData>();
+
     [Header("EasterEgg")]
     public InputField easterEggInputField;
 
@@ -31,6 +34,26 @@ public class Game_Mg : MonoBehaviour
     private void Awake()
     {
         Inst = this;
+        InitializeMasterSkills(); // 딱 한 번만 메인 DB 구축
+    }
+
+    void InitializeMasterSkills()
+    {
+        // 기존 Skill_Mgr에 있던 그 업그레이드 리스트들을 여기다가 싹 넣어줍니다.
+        masterSkillDatabase.Add(new SkillData(SkillID.Normal_FireRate, "더 많은 혼령탄", "혼령탄이 더 자주 나갑니다", SkillRarity.Bronze, 3));
+        masterSkillDatabase.Add(new SkillData(SkillID.Normal_MultiShot, "혼령탄 동시에 한발 더", "혼령탄이 1개 추가로 나갑니다", SkillRarity.Bronze, 5));
+        masterSkillDatabase.Add(new SkillData(SkillID.Normal_Damage, "더 강력한 혼령탄", "혼령탄 위력이 증가합니다", SkillRarity.Bronze, 3));
+        masterSkillDatabase.Add(new SkillData(SkillID.Normal_Size, "큰 혼령탄", "혼령탄 크기가 증가합니다", SkillRarity.Bronze, 1));
+
+        masterSkillDatabase.Add(new SkillData(SkillID.Skill_Cooldown, "더 빠른 영혼절단", "영혼절단 쿨타임이 감소합니다", SkillRarity.Bronze, 3));
+        masterSkillDatabase.Add(new SkillData(SkillID.Skill_Damage, "더 강력한 영혼절단", "영혼절단이 더 강력해집니다", SkillRarity.Bronze, 3));
+        masterSkillDatabase.Add(new SkillData(SkillID.Skill_Range, "더 큰 영혼절단", "영혼절단 공격범위가 증가합니다", SkillRarity.Bronze, 3));
+        masterSkillDatabase.Add(new SkillData(SkillID.Skill_Split, "영혼절단 한번에 두개", "영혼절단이 두갈래로 나갑니다", SkillRarity.Gold, 1));
+
+        masterSkillDatabase.Add(new SkillData(SkillID.Ultimate_Duration, "더 오래가는 천도광", "천도광 지속시간이 증가합니다", SkillRarity.Bronze, 2));
+        masterSkillDatabase.Add(new SkillData(SkillID.Ultimate_Damage, "더 강력한 천도광", "천도광 위력이 증가합니다", SkillRarity.Bronze, 1));
+        masterSkillDatabase.Add(new SkillData(SkillID.Ultimate_Range, "더 넒은 천도광", "천도광 범위가 증가합니다", SkillRarity.Gold, 1));
+        masterSkillDatabase.Add(new SkillData(SkillID.Ultimate_Cooltime, "더 빠른 천도광", "천도광 쿨타임이 감소합니다", SkillRarity.Silver, 1));
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -68,6 +91,7 @@ public class Game_Mg : MonoBehaviour
        
     }// void Update()
 
+
     public void PlayerSkillUpdate()
     {
         if (playerCharacter != null)
@@ -84,28 +108,18 @@ public class Game_Mg : MonoBehaviour
         if (m_CurrentPlayerHon >= m_MaxPlayerHon)
         {
             GenerateSkillChoices();
-            m_Player_Hon.fillAmount = 0.0f;
         }
     }
 
     public void GenerateSkillChoices()
     {
         skillselectRoot.gameObject.SetActive(true);
+        Time.timeScale = 0f; // 게임 일시정지
 
-        Time.timeScale = 0f; // ���� �Ͻ�����
-
-        if (skill_Mgrs == null || skill_Mgrs.Length < 3)
-        {
-            Debug.LogError("skill_Mgrs �迭�� ī�� UI 3���� ����� ������� �ʾҽ��ϴ�.");
-        }
-
-        // �̹� �̱⿡�� �ӽ� ���õ� ��ų���� ���� (�ߺ� ������ ����Ʈ)
         List<SkillData> selectedChoices = new List<SkillData>();
-
-        // 0�� ī�� ��ũ��Ʈ�� ���� �����ͺ��̽� ������ �����մϴ�.
         Skill_Mgr mainDB = skill_Mgrs[0];
 
-        // ī�� 3�� �̱� ����
+        // 카드 3장 뽑기 진행
         for (int i = 0; i < 3; i++)
         {
             SkillData picked = mainDB.GetRandomSkillExcept(selectedChoices);
@@ -113,24 +127,29 @@ public class Game_Mg : MonoBehaviour
             if (picked != null)
             {
                 selectedChoices.Add(picked);
-                // ȭ���� i��° ī�� UI�� ������ ���� �� ����
                 skill_Mgrs[i].SetSkillUI(picked);
                 skill_Mgrs[i].gameObject.SetActive(true);
             }
             else
             {
-                // �� �̻� ���� ��ų�� �����ϴٸ� �ش� ī�� UI �ڸ��� ��
                 skill_Mgrs[i].gameObject.SetActive(false);
             }
+
         }
+
+        m_CurrentPlayerHon = 0.0f;
+
     }// public void GenerateSkillChoices()
 
 
     public void CloseSkillChoices()
     {
         skillselectRoot.gameObject.SetActive(false); // UI ��Ʈ ����
+
+        m_Player_Hon.fillAmount = 0.0f;
         Time.timeScale = 1f;                         // ���� �ð� ����ȭ (�ٽ� ������!)
-        Debug.Log("��ų ���� UI ���� - ���� �簳");
+        m_CurrentPlayerHon = 0.0f;                          // 플레이어 혼 초기화
+        //Debug.Log("��ų ���� UI ���� - ���� �簳");
     }// public void CloseSkillChoices()
 
     public static bool IsPointerOverUIObject() //UGUI�� UI���� ���� ��ŷ�Ǵ��� Ȯ���ϴ� �Լ�
