@@ -22,6 +22,13 @@ public class Game_Mg : MonoBehaviour
 
     public Image m_Player_Hon;
 
+    [SerializeField] private PlayerCtrl playerCharacter;
+
+    [Header("Skill_Hon")]
+    float m_MaxPlayerHon = 100f;
+    float m_CurrentPlayerHon;
+    float m_MonsterHon = 10.0f;
+
     [Header("EasterEgg")]
     public InputField easterEggInputField;
     [HideInInspector] public static bool isBossStage = false;
@@ -37,16 +44,24 @@ public class Game_Mg : MonoBehaviour
     void Start()    
     {
         skillselectRoot.gameObject.SetActive(false);
+        m_Player_Hon.fillAmount = 0.0f;
         //easterEggInputField.gameObject.SetActive(false);
+
+        if (playerCharacter == null)
+        {
+            playerCharacter = GameObject.FindAnyObjectByType<PlayerCtrl>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            GenerateSkillChoices();
-        }
+        PlayerSkillUpdate();
+
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    GenerateSkillChoices();
+        //}
 
         if (Input.GetKeyDown(KeyCode.Numlock)) //&& ))isBossStage == true
         {
@@ -59,6 +74,26 @@ public class Game_Mg : MonoBehaviour
 
        
     }// void Update()
+
+    public void PlayerSkillUpdate()
+    {
+        if (playerCharacter != null)
+        {
+            playerCharacter.ReduceCooldowns(Time.deltaTime);
+        }
+    }
+
+    public void OnSkillUpdatee(float value)
+    {
+       m_CurrentPlayerHon += value;
+        m_Player_Hon.fillAmount = m_CurrentPlayerHon / m_MaxPlayerHon;
+
+        if (m_CurrentPlayerHon >= m_MaxPlayerHon)
+        {
+            GenerateSkillChoices();
+            m_Player_Hon.fillAmount = 0.0f;
+        }
+    }
 
     public void GenerateSkillChoices()
     {

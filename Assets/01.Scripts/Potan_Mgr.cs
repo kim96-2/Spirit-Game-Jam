@@ -41,22 +41,19 @@ public class Potan_Mgr : MonoBehaviour
                 }
                 enemy.Damage(damage);
             }
-            else
-            {
-            }
-
-            if (destroyParticle != null)
-            {
-                if (ObjectPoolManager.Instance != null)
-                {
-                    ObjectPoolManager.Instance.Get(destroyParticle, transform.position, quaternion.identity);
-                }
-                else
-                {
-                    GameObject backupEffect = Instantiate(destroyParticle, transform.position, Quaternion.identity);
-                    Destroy(backupEffect, 2.0f);
-                }
-            }
+           
+            //if (destroyParticle != null)
+            //{
+            //    if (ObjectPoolManager.Instance != null)
+            //    {
+            //        ObjectPoolManager.Instance.Get(destroyParticle, transform.position, quaternion.identity);
+            //    }
+            //    else
+            //    {
+            //        GameObject backupEffect = Instantiate(destroyParticle, transform.position, Quaternion.identity);
+            //        Destroy(backupEffect, 2.0f);
+            //    }
+            //}
 
             Destroy(gameObject);
         }

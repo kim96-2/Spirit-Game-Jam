@@ -57,7 +57,7 @@ public class PlayerCtrl : MonoBehaviour
 
     GameObject activeBeam;
     bool isUltimateActive = false;
-    float ultimateCooldownTimer;
+    float ultimateCooldownTimer = 0.0f;
 
     float m_AttackTimer = 0.0f;
     float m_SkillTimer = 0.0f;
@@ -89,9 +89,6 @@ public class PlayerCtrl : MonoBehaviour
             StartDash();
         }
 
-        if (ultimateCooldownTimer > 0)
-            ultimateCooldownTimer -= Time.deltaTime;
-
         Attack();
     }
 
@@ -121,7 +118,7 @@ public class PlayerCtrl : MonoBehaviour
         rb.MovePosition(movePos);
 
         if (moveInput != Vector3.zero)
-        {
+        {   
             rb.MoveRotation(Quaternion.LookRotation(moveInput));
         }
     }
@@ -136,9 +133,6 @@ public class PlayerCtrl : MonoBehaviour
 
     public void Attack()
     {
-        m_AttackTimer -= Time.deltaTime;
-        m_SkillTimer -= Time.deltaTime;
-
         // [일반 공격]
         if (m_AttackTimer <= 0.0f && Game_Mg.IsPointerOverUIObject() == false)
         {
@@ -169,7 +163,6 @@ public class PlayerCtrl : MonoBehaviour
 
                 SpawnSkillProjectiles(launchDirection);
 
-                // ★ [스킬 사운드 재생] 변수에 오디오가 등록되어 있을 때만 소리 내기
                 if (skillSound != null)
                 {
                     AudioSource.PlayClipAtPoint(skillSound, transform.position);
@@ -179,9 +172,10 @@ public class PlayerCtrl : MonoBehaviour
             m_SkillTimer = skillCooldown;
         }
 
-        // [궁극기 공격]
+        // [궁극기 공격] 
         if (Input.GetKeyDown(KeyCode.Space) && ultimateCooldownTimer <= 0 && !isUltimateActive && Game_Mg.IsPointerOverUIObject() == false)
         {
+            ultimateCooldownTimer = ultimateCooldown; // 즉시 최대 쿨타임 적용!
             StartCoroutine(UltimateRoutine());
 
             if (ultimateSound != null)
@@ -193,6 +187,51 @@ public class PlayerCtrl : MonoBehaviour
         if (isUltimateActive && activeBeam != null)
         {
             RotateUltimateBeam();
+        }
+    }
+
+    public void ReduceCooldowns(float deltaTime)
+    {
+        // 1. 일반 공격 타이머 감소
+        if (m_AttackTimer > 0)
+        {
+            m_AttackTimer -= deltaTime;
+        }
+
+        // 2. [스킬 공격] 타이머 감소 및 UI 연동
+        if (m_SkillTimer > 0)
+        {
+            m_SkillTimer -= deltaTime;
+
+            if (Game_Mg.Inst != null && Game_Mg.Inst.Skill_0 != null)
+            {
+                Game_Mg.Inst.Skill_0.fillAmount = m_SkillTimer / skillCooldown;
+            }
+        }
+        else
+        {
+            if (Game_Mg.Inst != null && Game_Mg.Inst.Skill_0 != null)
+            {
+                Game_Mg.Inst.Skill_0.fillAmount = 0f;
+            }
+        }
+
+        // 3. [궁극기 공격] 타이머 감소 및 UI 연동 ★ 이제 정확한 쿨타임으로 부드럽게 깎입니다.
+        if (ultimateCooldownTimer > 0)
+        {
+            ultimateCooldownTimer -= deltaTime;
+
+            if (Game_Mg.Inst != null && Game_Mg.Inst.Skill_1 != null)
+            {
+                Game_Mg.Inst.Skill_1.fillAmount = ultimateCooldownTimer / ultimateCooldown;
+            }
+        }
+        else
+        {
+            if (Game_Mg.Inst != null && Game_Mg.Inst.Skill_1 != null)
+            {
+                Game_Mg.Inst.Skill_1.fillAmount = 0f;
+            }
         }
     }
 
@@ -240,7 +279,6 @@ public class PlayerCtrl : MonoBehaviour
     IEnumerator UltimateRoutine()
     {
         isUltimateActive = true;
-        ultimateCooldownTimer = ultimateCooldown;
 
         activeBeam = Instantiate(BiiimPrefab, firePoint.position, firePoint.rotation);
         activeBeam.transform.SetParent(firePoint);

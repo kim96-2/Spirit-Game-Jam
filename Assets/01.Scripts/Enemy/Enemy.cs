@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
 
         if (hp <= 0)
         {
+            Game_Mg.Inst.OnSkillUpdatee(10.0f);
             DestoryEnemy();
         }
     }
