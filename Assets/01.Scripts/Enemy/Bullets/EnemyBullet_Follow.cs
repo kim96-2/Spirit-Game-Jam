@@ -13,9 +13,9 @@ public class EnemyBullet_Follow : EnemyBullet
 
     float _moveTime = 0f;
 
-    public override void Shoot(Vector3 dir, Enemy enemy)
+    public override void Shoot(Vector3 dir, Enemy enemy, float damage)
     {
-        base.Shoot(dir, enemy);
+        base.Shoot(dir, enemy, damage);
 
         firstTarget = transform.position + dir * moveSpeed * 4f;
 

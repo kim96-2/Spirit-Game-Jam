@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed = 5f;
-    [SerializeField] float damageAmount = 10f;
+    [SerializeField] protected float damageAmount = 10f;
     [SerializeField] float destroyDuration = 10f;
     [SerializeField] GameObject destroyParticle;
 
@@ -49,10 +49,11 @@ public class EnemyBullet : MonoBehaviour
         _destroyTime += Time.deltaTime;
     }
 
-    public virtual void Shoot(Vector3 shootDir, Enemy enemy)
+    public virtual void Shoot(Vector3 shootDir, Enemy enemy, float damage)
     {
         this.shootDir = shootDir;
         this.enemy = enemy;
+        this.damageAmount = damage;
     }
 
     public virtual void DestroyBullet()
