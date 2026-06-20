@@ -16,6 +16,11 @@ public class EnemyShooter : MonoBehaviour
 
     public virtual void Shoot(Vector3 dir)
     {
+        ShootBullet(dir);
+    }
+
+    protected void ShootBullet(Vector3 dir)
+    {
         // GameObject bullet = Instantiate(bulletPrefab,shootPos.position, Quaternion.identity);
         GameObject bullet = ObjectPoolManager.Instance.Get(bulletPrefab, shootPos.position, Quaternion.identity);
 
