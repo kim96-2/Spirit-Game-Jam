@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -336,7 +337,11 @@ public class PlayerCtrl : MonoBehaviour
 
         playerCurrentHp -= amount;
 
-
+        if (playerCurrentHp <= 0.0f)
+        {
+            playerCurrentHp = 0.0f;
+            SceneManager.LoadScene("GAMEOVER");
+        }
 
         if (Game_Mg.Inst != null)
         {
