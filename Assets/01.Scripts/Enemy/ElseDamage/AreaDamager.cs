@@ -10,6 +10,9 @@ public class AreaDamager : MonoBehaviour
     [SerializeField] float tickDamage = 5f;
     [SerializeField] float damageDuration = 5f;
 
+    [SerializeField] Transform damageAreaObject;
+    [SerializeField] ParticleSystem areaParticle;
+
     PlayerCtrl player;
 
     PoolObject poolObject;
@@ -28,6 +31,21 @@ public class AreaDamager : MonoBehaviour
     void SetDamager()
     {
         _time = 0f;
+
+        Vector3 rangeScale = new(damageRange, damageAreaObject.localScale.y, damageRange);
+        Vector3 position = transform.position;
+        position.y = -1.41f;
+
+        damageAreaObject.localScale = rangeScale;
+        damageAreaObject.position = position;
+
+        areaParticle.transform.position = position;
+        
+        rangeScale.y = damageRange / 2f;
+        rangeScale.x = damageRange / 2f;
+        rangeScale.z = damageRange / 2f;
+        var shape = areaParticle.shape;
+        shape.scale = rangeScale;
 
         StartCoroutine(Damager());
     }
