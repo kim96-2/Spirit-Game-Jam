@@ -1401,6 +1401,9 @@ MonoBehaviour:
   m_SkillTitle: {fileID: 1749688849}
   m_SkillDesc: {fileID: 438794702}
   m_SkillIcon: {fileID: 1138380545}
+  BronseImg: {fileID: 21300000, guid: 3a7d7d90dd464b748a2af1c250932b82, type: 3}
+  SilverImg: {fileID: 21300000, guid: a4c4b2d8a6932744b939035627d62819, type: 3}
+  GoldImg: {fileID: 21300000, guid: 58d80e7ec50cecf44a7d136d8f306f9a, type: 3}
   skillDatabase: []
 --- !u!1 &1185043903
 GameObject:
@@ -1776,6 +1779,9 @@ MonoBehaviour:
   m_SkillTitle: {fileID: 1967458828}
   m_SkillDesc: {fileID: 242661434}
   m_SkillIcon: {fileID: 1656258298}
+  BronseImg: {fileID: 21300000, guid: 3a7d7d90dd464b748a2af1c250932b82, type: 3}
+  SilverImg: {fileID: 21300000, guid: a4c4b2d8a6932744b939035627d62819, type: 3}
+  GoldImg: {fileID: 21300000, guid: 58d80e7ec50cecf44a7d136d8f306f9a, type: 3}
   skillDatabase: []
 --- !u!114 &1656258297
 MonoBehaviour:
@@ -2067,6 +2073,9 @@ MonoBehaviour:
   m_SkillTitle: {fileID: 940140767}
   m_SkillDesc: {fileID: 50702335}
   m_SkillIcon: {fileID: 1698771088}
+  BronseImg: {fileID: 21300000, guid: 3a7d7d90dd464b748a2af1c250932b82, type: 3}
+  SilverImg: {fileID: 21300000, guid: a4c4b2d8a6932744b939035627d62819, type: 3}
+  GoldImg: {fileID: 21300000, guid: 58d80e7ec50cecf44a7d136d8f306f9a, type: 3}
   skillDatabase: []
 --- !u!114 &1698771087
 MonoBehaviour:
@@ -2815,6 +2824,24 @@ MonoBehaviour:
   SkillPrefab: {fileID: 8728956983909618445, guid: 0f57a19e4fd5ee74383628d725265da9, type: 3}
   BiiimPrefab: {fileID: 1259858752452096497, guid: 896ef3ddd19a7184abd2068031d9d98c, type: 3}
   firePoint: {fileID: 2130683005}
+  normalAttackCooldown: 0.5
+  normalMultiShotCount: 1
+  normalDamageModifier: 1
+  normalSizeModifier: 1
+  isNormalWallBounce: 0
+  isNormalBoomerang: 0
+  isNormalPenetration: 0
+  normalGuidedChance: 0
+  skillCooldown: 7
+  skillDamageModifier: 1
+  skillSizeModifier: 1
+  isSkillWallBounce: 0
+  isSkillBoomerang: 0
+  isSkillSplit: 0
+  ultimateDuration: 5
+  ultimateDamageModifier: 1
+  ultimateSizeModifier: 1
+  ultimateCooldown: 20
 --- !u!54 &919132148278802894
 Rigidbody:
   m_ObjectHideFlags: 0

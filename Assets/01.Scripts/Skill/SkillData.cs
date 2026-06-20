@@ -27,7 +27,7 @@ public enum SkillID
     Ultimate_Duration,       // 15. 궁극기 지속시간 증가
     Ultimate_Damage,         // 16. 궁극기 위력 증가
     Ultimate_Range,          // 17. 궁극기 범위 증가
-    Ultimate_SoulCost        // 18. 혼 게이지 감소
+    Ultimate_Cooltime        // 18. 궁극기 쿨타임 감소
 }
 
 [System.Serializable]
