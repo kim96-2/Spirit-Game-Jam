@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapExit
   exitCollider: {fileID: 4872977248505344061}
-  exitWall: {fileID: 0}
+  exitWall: {fileID: 4872977248505344061}
 --- !u!54 &6924626414047153413
 Rigidbody:
   m_ObjectHideFlags: 0
