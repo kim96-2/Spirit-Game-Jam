@@ -9,6 +9,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3f23ce2078a87da4c9d6d9a49d0d289d, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f23ce2078a87da4c9d6d9a49d0d289d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f23ce2078a87da4c9d6d9a49d0d289d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f23ce2078a87da4c9d6d9a49d0d289d, type: 3}
+>>>>>>> e45bc6cc8129c0a5cc8f9cca81e8e89acd0e1534
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -50,7 +65,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3f23ce2078a87da4c9d6d9a49d0d289d, type: 3}
       propertyPath: m_Name
+<<<<<<< HEAD
       value: DisplayBoarad_B
+=======
+      value: DisplayBoarad_B_Prefab
+>>>>>>> e45bc6cc8129c0a5cc8f9cca81e8e89acd0e1534
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

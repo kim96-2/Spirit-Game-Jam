@@ -22,12 +22,10 @@ public class BossTriggerMgr : MonoBehaviour
     // Is Trigger�� üũ�Ǿ� �ִٸ� OnTriggerEnter�� ����ؾ� ��!
     void OnTriggerEnter(Collider other)
     {
-        // �÷��̾����� Ȯ��
         if (other.CompareTag("Player") && !isTriggered)
         {
-            isTriggered = true; // �� ���� �ߵ��ϰ� ����
+            isTriggered = true; 
 
-            // BossCtrl�� �̱���(Inst)�� ���� �ƾ� ȣ��
             if (BossCtrl.Inst != null)
             {
                 BossCtrl.Inst.TriggerBossIntro(bossSpawnTransform);

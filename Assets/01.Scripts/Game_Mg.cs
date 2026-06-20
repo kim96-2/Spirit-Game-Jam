@@ -25,6 +25,7 @@ public class Game_Mg : MonoBehaviour
 
     [Header("중앙 스킬 데이터베이스")]
     public List<SkillData> masterSkillDatabase = new List<SkillData>();
+    public bool isSkillChoose = false;
 
     [Header("EasterEgg")]
     public InputField easterEggInputField;
@@ -63,6 +64,11 @@ public class Game_Mg : MonoBehaviour
         m_Player_Hon.fillAmount = 0.0f;
         //easterEggInputField.gameObject.SetActive(false);
 
+        if (Sound_Mgr.Inst != null)
+        {
+            Sound_Mgr.Inst.PlayBgm("Bgm_0", 0.8f);
+        }
+
         if (playerCharacter == null)
         {
             playerCharacter = GameObject.FindAnyObjectByType<PlayerCtrl>();
@@ -94,6 +100,9 @@ public class Game_Mg : MonoBehaviour
 
     public void PlayerSkillUpdate()
     {
+        if (isSkillChoose == true)
+            return;
+
         if (playerCharacter != null)
         {
             playerCharacter.ReduceCooldowns(Time.deltaTime);
@@ -113,8 +122,11 @@ public class Game_Mg : MonoBehaviour
 
     public void GenerateSkillChoices()
     {
+        isSkillChoose = true;
+
         skillselectRoot.gameObject.SetActive(true);
-        Time.timeScale = 0f; // 게임 일시정지
+        Time.timeScale = 0f; // 게임 일시정지        
+        //Time.fixedDeltaTime = 0f;
 
         List<SkillData> selectedChoices = new List<SkillData>();
         Skill_Mgr mainDB = skill_Mgrs[0];
@@ -139,6 +151,7 @@ public class Game_Mg : MonoBehaviour
 
         m_CurrentPlayerHon = 0.0f;
 
+
     }// public void GenerateSkillChoices()
 
 
@@ -149,6 +162,8 @@ public class Game_Mg : MonoBehaviour
         m_Player_Hon.fillAmount = 0.0f;
         m_CurrentPlayerHon = 0.0f;                          
         Time.timeScale = 1f;
+        //Time.fixedDeltaTime = 1f;
+        isSkillChoose = false;
     }// public void CloseSkillChoices()
 
     public static bool IsPointerOverUIObject() //UGUI�� UI���� ���� ��ŷ�Ǵ��� Ȯ���ϴ� �Լ�

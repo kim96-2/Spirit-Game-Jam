@@ -70,6 +70,12 @@ public class CameraEffect : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(duration);
 
+        if (Game_Mg.Inst.isSkillChoose == true)
+        {
+            isSlowActive = false;
+            yield break;
+        }
+
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = 0.02f;
 
