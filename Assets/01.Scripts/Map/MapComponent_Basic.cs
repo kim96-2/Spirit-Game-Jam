@@ -1,14 +1,17 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MapComponent_Basic : MapComponent
 {
-    [SerializeField] Enemy enemyPrefab;
+    [SerializeField] List<Enemy> enemyPrefabs;
     
     Transform[] enemySpawnPos;
 
     [SerializeField] int enemySpawnCount = 2;
     int currentEnemyCount;
+
+    [SerializeField] float waitSeconds = 3f;
 
     public override void SetMap(int stageNum, Vector3 offsetPos, MapComponent nextMap)
     {
@@ -30,12 +33,13 @@ public class MapComponent_Basic : MapComponent
 
         for(int i = 0; i < enemySpawnCount; i++)
         {
+
             Vector3 spawnPos = enemySpawnPos[Random.Range(0, enemySpawnPos.Length)].position;
-            Enemy enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], spawnPos, Quaternion.identity);
 
             enemy.SetEnemy(this);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitSeconds);
         }
     }
 

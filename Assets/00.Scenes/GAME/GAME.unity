@@ -2088,7 +2088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   mapPrefab: {fileID: 7145807719250077624, guid: 81a950d336da5814eae78a89289cc3ff, type: 3}
   bossMapPrefab: {fileID: 2737350035646865117, guid: 6f2a4c7798c10ca4daa500504c43fcfb, type: 3}
-  stageCount: 1
+  stageCount: 3
   mapOffset: {x: 200, y: 0, z: 0}
   testPlayer: {fileID: 117646986}
 --- !u!4 &945355781
