@@ -35,6 +35,7 @@ public class EnemyBullet_Follow : EnemyBullet
         // float secondTargetAmount = 1f;
 
         Vector3 targetDir = secondTarget - transform.position;
+        targetDir.y = 0;
         targetDir.Normalize();
 
         if(enemy != null)
@@ -42,7 +43,9 @@ public class EnemyBullet_Follow : EnemyBullet
             secondTarget = enemy.transform.position;
         }
 
-        if((secondTarget - transform.position).sqrMagnitude < 0.1f)
+        Vector3 tempDir = secondTarget - transform.position;
+        tempDir.y = 0;
+        if(tempDir.sqrMagnitude < 0.1f)
         {
             DestroyBullet();
             return;
