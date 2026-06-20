@@ -5,6 +5,8 @@ public class MapComponent_Boss : MapComponent
     [SerializeField] Enemy bossPrefab;
     [SerializeField] BossTriggerMgr bossTriggerMgr;
 
+    Enemy boss;
+
     public override string StageInfo => "FINAL STAGE";
 
     public override void StartMap(Transform player)
@@ -18,6 +20,10 @@ public class MapComponent_Boss : MapComponent
     {
         Vector3 spawnPos = enemySpawnPosParent.position;
         Enemy boss = Instantiate(bossPrefab, spawnPos, Quaternion.identity);
+
+        this.boss = boss;
+
+        BossCtrl.Inst.SetBoss(this.boss);
 
         boss.SetEnemy(this);
     }

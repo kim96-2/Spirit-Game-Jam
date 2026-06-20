@@ -8,11 +8,15 @@ public class BossTriggerMgr : MonoBehaviour
 
     MapComponent_Boss map;
 
+    Enemy boss;
+
     public void SetBossTrigger(Transform bossSpawnTransform, MapComponent_Boss map)
     {
         this.bossSpawnTransform = bossSpawnTransform;
 
         this.map = map;
+
+        // this.boss = boss;
     }
 
     // Is Trigger�� üũ�Ǿ� �ִٸ� OnTriggerEnter�� ����ؾ� ��!

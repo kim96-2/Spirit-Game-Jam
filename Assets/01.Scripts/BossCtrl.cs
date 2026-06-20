@@ -10,6 +10,8 @@ public class BossCtrl : MonoBehaviour
 
     [Header("���� ����")]
     public Text BossTxt;
+    public Image bossHpBar;
+    public GameObject bossHpBarObject;
 
     public Transform PlayerTransform;
 
@@ -23,6 +25,9 @@ public class BossCtrl : MonoBehaviour
 
     private Transform bossSpawnTransform;
 
+    private Enemy boss;
+    float bossFullHp;
+
     private void Awake()
     {
         Inst = this;
@@ -33,17 +38,27 @@ public class BossCtrl : MonoBehaviour
     {
         if (BossTxt != null) 
             BossTxt.gameObject.SetActive(false);
+
+        bossHpBarObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnBossHpDamage()
     {
-        
+        bossHpBar.fillAmount = boss.Hp / bossFullHp;
+
+        if(boss.Hp <= 0f) bossHpBarObject.SetActive(false);
+    }
+
+    public void SetBoss(Enemy boss)
+    {
+        this.boss = boss;
     }
 
     public void TriggerBossIntro(Transform bossSpawnTransform)
     {
         this.bossSpawnTransform = bossSpawnTransform;
+
+        bossHpBarObject.SetActive(true);
 
         StartCoroutine(BossIntroCo());
     }
@@ -74,6 +89,9 @@ public class BossCtrl : MonoBehaviour
         }
 
         ReturnCameraToPlayer();
+
+        bossFullHp = boss.Hp;
+        boss.OnHpDamage += OnBossHpDamage;
 
         //isBattleStarted = true;
     }

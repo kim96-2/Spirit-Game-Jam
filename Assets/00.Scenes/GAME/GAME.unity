@@ -476,13 +476,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Game_Mg
   skillselectRoot: {fileID: 0}
   skill_Mgrs: []
-  Boss_Img: {fileID: 0}
-  Boss_Paze2: {fileID: 0}
   Skill_0: {fileID: 0}
   Skill_1: {fileID: 0}
-  Player_HpBar: {fileID: 0}
-  Boss_HpBar: {fileID: 0}
   m_Player_Hon: {fileID: 0}
+  playerCharacter: {fileID: 0}
   easterEggInputField: {fileID: 0}
 --- !u!65 &80173229
 BoxCollider:
@@ -1765,6 +1762,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraEffect
   virtualCamera: {fileID: 245367867}
+--- !u!1 &378239355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 378239359}
+  - component: {fileID: 378239358}
+  - component: {fileID: 378239357}
+  - component: {fileID: 378239356}
+  m_Layer: 5
+  m_Name: BossCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &378239356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378239355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &378239357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378239355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &378239358
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378239355}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &378239359
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378239355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1030523914}
+  - {fileID: 1529804191}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &406821764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +1960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &433487946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2716,7 +2817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   mapPrefab: {fileID: 7145807719250077624, guid: 81a950d336da5814eae78a89289cc3ff, type: 3}
   bossMapPrefab: {fileID: 2737350035646865117, guid: 6f2a4c7798c10ca4daa500504c43fcfb, type: 3}
-  stageCount: 3
+  stageCount: 1
   mapOffset: {x: 200, y: 0, z: 0}
   testPlayer: {fileID: 117646986}
 --- !u!4 &945355781
@@ -2847,13 +2948,10 @@ MonoBehaviour:
   - {fileID: 1202703180}
   - {fileID: 1886082095}
   - {fileID: 1582452504}
-  Boss_Img: {fileID: 0}
-  Boss_Paze2: {fileID: 0}
   Skill_0: {fileID: 917340049}
-  Skill_1: {fileID: 1385444575}
-  Player_HpBar: {fileID: 2066209465}
-  Boss_HpBar: {fileID: 0}
-  m_Player_Hon: {fileID: 1794198956}
+  Skill_1: {fileID: 691938474}
+  m_Player_Hon: {fileID: 2084658969}
+  playerCharacter: {fileID: 117646985}
   easterEggInputField: {fileID: 684597105}
 --- !u!4 &1012028764
 Transform:
@@ -2895,12 +2993,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030523913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1962013722}
+  m_Father: {fileID: 378239359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3368,6 +3466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossCtrl
   BossTxt: {fileID: 1030523915}
+  bossHpBar: {fileID: 479970339}
+  bossHpBarObject: {fileID: 433487945}
   PlayerTransform: {fileID: 117646986}
   mainBossCamera: {fileID: 245367867}
   introZoomSize: 3.5
@@ -8541,7 +8641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1529804191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8549,14 +8649,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529804190}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 433487946}
   - {fileID: 406821765}
-  m_Father: {fileID: 1962013722}
+  m_Father: {fileID: 378239359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14294,10 +14394,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1030523914}
   - {fileID: 1833907631}
   - {fileID: 684597104}
-  - {fileID: 1529804191}
   - {fileID: 1569194209}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14853,3 +14951,4 @@ SceneRoots:
   - {fileID: 1289317663}
   - {fileID: 1962013722}
   - {fileID: 2014662694}
+  - {fileID: 378239359}

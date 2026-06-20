@@ -9,6 +9,9 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float hp = 100f;
+    public float Hp => hp;
+    public Action OnHpDamage;
+
     [SerializeField] GameObject destroyParticle;
     [SerializeField] Transform model;
     
@@ -61,6 +64,8 @@ public class Enemy : MonoBehaviour
     public void Damage(float damage)
     {
         hp -= damage;
+
+        OnHpDamage?.Invoke();
 
         if (hp <= 0)
         {
