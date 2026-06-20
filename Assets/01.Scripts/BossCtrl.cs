@@ -7,7 +7,8 @@ using Unity.VisualScripting;
 
 public class BossCtrl : MonoBehaviour
 {
-    [Header("º¸½º °ü·Ã")]
+
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public Text BossTxt;
 
     public Transform PlayerTransform;
@@ -16,9 +17,11 @@ public class BossCtrl : MonoBehaviour
     public float introZoomSize = 3.5f;
     public float defaultZoomSize = 7f;
 
-    public GameObject BossTrigger;
+    // public GameObject BossTrigger;
 
     public static BossCtrl Inst;
+
+    private Transform bossSpawnTransform;
 
     private void Awake()
     {
@@ -38,17 +41,19 @@ public class BossCtrl : MonoBehaviour
         
     }
 
-    public void TriggerBossIntro()
+    public void TriggerBossIntro(Transform bossSpawnTransform)
     {
+        this.bossSpawnTransform = bossSpawnTransform;
+
         StartCoroutine(BossIntroCo());
     }
 
     IEnumerator BossIntroCo()
     {
-        mainBossCamera.Follow = this.transform;
-        mainBossCamera.LookAt = this.transform;
+        mainBossCamera.Follow = this.bossSpawnTransform;
+        mainBossCamera.LookAt = this.bossSpawnTransform;
 
-        // 2. ÁÜÀÎ ¹× ÅØ½ºÆ® µîÀå
+        // 2. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
         DOVirtual.Float(mainBossCamera.Lens.OrthographicSize, introZoomSize, 0.5f, (val) => mainBossCamera.Lens.OrthographicSize = val);
 
         if (BossTxt != null)
@@ -56,12 +61,12 @@ public class BossCtrl : MonoBehaviour
             BossTxt.gameObject.SetActive(true);
             Color c = BossTxt.color;
             c.a = 0; BossTxt.color = c;
-            DOTween.To(() => BossTxt.color, x => BossTxt.color = x, new Color(c.r, c.g, c.b, 0.4f), 0.5f);
+            DOTween.To(() => BossTxt.color, x => BossTxt.color = x, new Color(c.r, c.g, c.b, 0.1f), 0.5f);
         }
 
         yield return new WaitForSeconds(2.0f);
 
-        // 4. ÅØ½ºÆ® »ç¶óÁü & Ä«¸Þ¶ó ÇÃ·¹ÀÌ¾î º¹±Í
+        // 4. ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ & Ä«ï¿½Þ¶ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (BossTxt != null)
         {
             DOTween.To(() => BossTxt.color, x => BossTxt.color = x, new Color(BossTxt.color.r, BossTxt.color.g, BossTxt.color.b, 0f), 0.5f)
@@ -80,7 +85,7 @@ public class BossCtrl : MonoBehaviour
             mainBossCamera.Follow = PlayerTransform;
             mainBossCamera.LookAt = PlayerTransform;
 
-            // ÁÜ¾Æ¿ô
+            // ï¿½Ü¾Æ¿ï¿½
             DOVirtual.Float(mainBossCamera.Lens.OrthographicSize, defaultZoomSize, 0.5f, (val) => mainBossCamera.Lens.OrthographicSize = val);
         }
     }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class MapComponent_Boss : MapComponent
 {
     [SerializeField] Enemy bossPrefab;
+    [SerializeField] BossTriggerMgr bossTriggerMgr;
 
     public override string StageInfo => "FINAL STAGE";
 
@@ -10,6 +11,11 @@ public class MapComponent_Boss : MapComponent
     {
         base.StartMap(player);
 
+        bossTriggerMgr.SetBossTrigger(enemySpawnPosParent, this);
+    }
+
+    public void SpawnBoss()
+    {
         Vector3 spawnPos = enemySpawnPosParent.position;
         Enemy boss = Instantiate(bossPrefab, spawnPos, Quaternion.identity);
 

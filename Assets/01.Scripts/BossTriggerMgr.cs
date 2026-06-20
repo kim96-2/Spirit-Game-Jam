@@ -4,19 +4,34 @@ public class BossTriggerMgr : MonoBehaviour
 {
     private bool isTriggered = false;
 
-    // Is Trigger°¡ Ã¼Å©µÇ¾î ÀÖ´Ù¸é OnTriggerEnter¸¦ »ç¿ëÇØ¾ß ÇØ!
+    private Transform bossSpawnTransform;
+
+    MapComponent_Boss map;
+
+    public void SetBossTrigger(Transform bossSpawnTransform, MapComponent_Boss map)
+    {
+        this.bossSpawnTransform = bossSpawnTransform;
+
+        this.map = map;
+    }
+
+    // Is Triggerï¿½ï¿½ Ã¼Å©ï¿½Ç¾ï¿½ ï¿½Ö´Ù¸ï¿½ OnTriggerEnterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½!
     void OnTriggerEnter(Collider other)
     {
-        // ÇÃ·¹ÀÌ¾îÀÎÁö È®ÀÎ
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if (other.CompareTag("Player") && !isTriggered)
         {
-            isTriggered = true; // ÇÑ ¹ø¸¸ ¹ßµ¿ÇÏ°Ô ¹æÁö
+            isTriggered = true; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ßµï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-            // BossCtrlÀÇ ½Ì±ÛÅæ(Inst)À» ÅëÇØ ÄÆ¾À È£Ãâ
+            // BossCtrlï¿½ï¿½ ï¿½Ì±ï¿½ï¿½ï¿½(Inst)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¾ï¿½ È£ï¿½ï¿½
             if (BossCtrl.Inst != null)
             {
-                BossCtrl.Inst.TriggerBossIntro();
+                BossCtrl.Inst.TriggerBossIntro(bossSpawnTransform);
             }
+
+            map.SpawnBoss();
+
+            Destroy(this.gameObject);
         }
     }
 }
