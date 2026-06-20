@@ -31,6 +31,8 @@ public class MapComponent : MonoBehaviour
     {
         player.position = startPos.position;
 
+        GameStageUI.Instance.SetInfoText(StageInfo);
+
         exit.SetExit(this);
         exit.DeactivateExit();
 
@@ -39,6 +41,8 @@ public class MapComponent : MonoBehaviour
     public void EndMap()
     {
         exit.ActivateExit();
+
+        GameStageUI.Instance.SetInfoText("STAGE CLEAR");
 
     }
 
