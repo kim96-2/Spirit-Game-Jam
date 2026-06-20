@@ -5976,6 +5976,10 @@ MonoBehaviour:
     count: 100
   - prefab: {fileID: 5308686600697836642, guid: 7be2a0f1d11d2114da1c432b7e5ee5c0, type: 3}
     count: 100
+  - prefab: {fileID: 5308686600697836642, guid: 51076eee23ea2f5458156712e0afd652, type: 3}
+    count: 100
+  - prefab: {fileID: 1658532943173319834, guid: 5e8f734ed340a1f4e9d38363207329ac, type: 3}
+    count: 100
 --- !u!4 &790924950
 Transform:
   m_ObjectHideFlags: 0

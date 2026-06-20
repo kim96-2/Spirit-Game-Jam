@@ -7,6 +7,7 @@ public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] float damageAmount = 10f;
+    [SerializeField] float destroyDuration = 10f;
 
     PoolObject poolObject;
     protected Rigidbody rigidbody;
@@ -42,7 +43,7 @@ public class EnemyBullet : MonoBehaviour
 
     void CheckDestroyTime()
     {
-        if(_destroyTime > 10f) DestroyBullet();
+        if(_destroyTime > destroyDuration) DestroyBullet();
         _destroyTime += Time.deltaTime;
     }
 
