@@ -26,7 +26,7 @@ public class Sound_Mgr : G_Singleton<Sound_Mgr>
         
     }
 
-    public void PlayBGM(string filenName, float fVolume = 0.2f)
+    public void PlayBgm(string filenName, float fVolume = 0.2f)
     {
         AudioClip gAudioClip = null;
         if (m_AdClipList.ContainsKey(filenName) == true)
