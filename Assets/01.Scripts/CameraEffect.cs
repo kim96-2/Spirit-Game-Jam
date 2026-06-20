@@ -14,6 +14,8 @@ public class CameraEffect : MonoBehaviour
     private Coroutine currentEffectCoroutine;
     private Tweener zoomTweener;
 
+    private bool isSlowActive = false;
+
     private void Awake()
     {
         Inst = this;
@@ -31,6 +33,9 @@ public class CameraEffect : MonoBehaviour
 
     public void PlayHitEffect(float slowDuration, float slowTimeScale, float zoomFOV)
     {
+        if (isSlowActive == true) 
+            return;
+
         if (currentEffectCoroutine != null)
         {
             StopCoroutine(currentEffectCoroutine);
@@ -46,6 +51,8 @@ public class CameraEffect : MonoBehaviour
 
     private IEnumerator HitEffectRoutine(float duration, float timeScale, float zoomFOV)
     {
+        isSlowActive = true;
+
         Time.timeScale = timeScale;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
@@ -70,6 +77,8 @@ public class CameraEffect : MonoBehaviour
         {
             virtualCamera.Lens.FieldOfView = defaultFOV;
         }
+
+        isSlowActive = false;
     }
 
     private void OnDestroy()

@@ -10,6 +10,10 @@ public class PlayerCtrl : MonoBehaviour
     [Header("이동 설정")]
     public float moveSpeed = 5.0f;
 
+    [Header("플레이어 설정")]
+    private float playerMaxHp = 60.0f;
+    private float playerCurrentHp = 0.0f;
+
     [Header("대시 설정")]
     public float dashSpeed = 100.0f;
     public float dashDuration = 0.1f;
@@ -72,6 +76,8 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        playerCurrentHp = playerMaxHp;
     }
 
     void Update()
@@ -136,17 +142,26 @@ public class PlayerCtrl : MonoBehaviour
         // [일반 공격]
         if (m_AttackTimer <= 0.0f && Game_Mg.IsPointerOverUIObject() == false)
         {
-            Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            float rayDistance;
+            Vector3 playerScreenPos = Camera.main.WorldToScreenPoint(firePoint.position);
+            
+            Vector3 mouseScreenPos = Input.mousePosition;
 
-            if (groundPlane.Raycast(ray, out rayDistance))
+            playerScreenPos.z = 0;
+            mouseScreenPos.z = 0;
+
+            Vector3 screenDirection = (mouseScreenPos - playerScreenPos).normalized;
+
+            Vector3 launchDirection = new Vector3(screenDirection.x, 0, screenDirection.y).normalized;
+
+            if (launchDirection != Vector3.zero)
             {
-                Vector3 targetPosition = ray.GetPoint(rayDistance);
-                Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
-                launchDirection.y = 0;
+                launchDirection.Normalize();
 
                 SpawnNormalProjectiles(launchDirection);
+            }
+            else
+            {
+                SpawnNormalProjectiles(transform.forward);
             }
 
             m_AttackTimer = normalAttackCooldown;
@@ -314,7 +329,13 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
-    public void Damage(float amount) { }
+    public void Damage(float amount) 
+    {
+        if (playerCurrentHp <= 0.0f)
+            return;
+
+        playerCurrentHp -= amount;
+    }
 
     public void ApplySkillUpgrade(SkillID id)
     {
