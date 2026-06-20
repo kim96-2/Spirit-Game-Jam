@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MonsterTrigger
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

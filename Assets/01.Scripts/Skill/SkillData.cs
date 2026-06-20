@@ -35,15 +35,17 @@ public class SkillData
 {
     public SkillID id;
     public string skillName;
+    public string skillDesc;
     public SkillRarity rarity;
     public int maxCount;     // 등장 최대 횟수 (기획서 기준)
     public int currentCount; // 현재 플레이어가 획득한 횟수
 
-    public SkillData(SkillID id, string name, SkillRarity rarity, int maxCount)
+    public SkillData(SkillID id, string name, string desc, SkillRarity rairity ,int maxCount)
     {
         this.id = id;
         this.skillName = name;
-        this.rarity = rarity;
+        this.skillDesc = desc;
+        this.rarity = rairity;
         this.maxCount = maxCount;
         this.currentCount = 0;
     }

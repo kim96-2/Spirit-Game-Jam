@@ -25,28 +25,28 @@ public class Skill_Mgr : MonoBehaviour
     void InitializeSkills()
     {
         // 일반 공격 업그레이드
-        skillDatabase.Add(new SkillData(SkillID.Normal_FireRate, "탄환이 더 자주 나감 (최대 3회)", SkillRarity.Bronze, 3));
-        skillDatabase.Add(new SkillData(SkillID.Normal_MultiShot, "탄환이 1개 추가로 나감 (최대 5개) - 부채꼴", SkillRarity.Bronze, 5));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Damage, "탄환 위력 증가", SkillRarity.Bronze, 3));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Size, "탄환 크기가 증가", SkillRarity.Bronze, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_WallBounce, "벽 반사 탄환 (1탄환당 반사 1회만, 반사각 90도)", SkillRarity.Gold, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Boomerang, "부메랑 탄환", SkillRarity.Silver, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Penetration, "관통탄으로 변경", SkillRarity.Gold, 1));
-        skillDatabase.Add(new SkillData(SkillID.Normal_Guided, "20% 확률 유도탄이 나감", SkillRarity.Bronze, 2));
+        skillDatabase.Add(new SkillData(SkillID.Normal_FireRate, "더 많은 혼령탄", "혼령탄이 더 자주 나갑니다 (최대 3회)", SkillRarity.Bronze, 3));
+        skillDatabase.Add(new SkillData(SkillID.Normal_MultiShot, "혼령탄 동시에 한발 더", "혼령탄이 1개 추가로 나갑니다 (최대 5개)", SkillRarity.Bronze, 5));
+        skillDatabase.Add(new SkillData(SkillID.Normal_Damage, "더 강력한 혼령탄", "혼령탄 위력이 증가합니다", SkillRarity.Bronze, 3));
+        skillDatabase.Add(new SkillData(SkillID.Normal_Size, "큰 혼령탄", "혼령탄 크기가 증가합니다", SkillRarity.Bronze, 1));
+        skillDatabase.Add(new SkillData(SkillID.Normal_WallBounce, "반사 혼령탄", "혼령탄이 벽에 1회 반사됩니다", SkillRarity.Gold, 1));
+        skillDatabase.Add(new SkillData(SkillID.Normal_Boomerang, "부메랑 혼령탄", "부메랑탄환으로 변경됩니다", SkillRarity.Silver, 1));
+        skillDatabase.Add(new SkillData(SkillID.Normal_Penetration, "혼령탄 관통", "관통탄으로 변경됩니다", SkillRarity.Gold, 1));
+        skillDatabase.Add(new SkillData(SkillID.Normal_Guided, "유도혼령탄", "20%확률로 유도탄이 나갑니다", SkillRarity.Bronze, 2));
 
         // 스킬 공격 업그레이드
-        skillDatabase.Add(new SkillData(SkillID.Skill_Cooldown, "스킬 쿨타임 감소", SkillRarity.Bronze, 3));
-        skillDatabase.Add(new SkillData(SkillID.Skill_Damage, "스킬 위력 증가", SkillRarity.Bronze, 3));
-        skillDatabase.Add(new SkillData(SkillID.Skill_Range, "스킬 범위 증가", SkillRarity.Bronze, 3));
-        skillDatabase.Add(new SkillData(SkillID.Skill_WallBounce, "벽 반사 탄환 (1탄환당 반사 1회만, 반사각 90도)", SkillRarity.Gold, 1));
-        skillDatabase.Add(new SkillData(SkillID.Skill_Boomerang, "부메랑 스킬", SkillRarity.Silver, 1));
-        skillDatabase.Add(new SkillData(SkillID.Skill_Split, "스킬 2갈래 발사", SkillRarity.Gold, 1));
+        skillDatabase.Add(new SkillData(SkillID.Skill_Cooldown, "더 빠른 영혼절단", "영혼절단 쿨타임이 감소합니다", SkillRarity.Bronze, 3));
+        skillDatabase.Add(new SkillData(SkillID.Skill_Damage, "더 강력한 영혼절단", "영혼절단이 더 강력해집니다", SkillRarity.Bronze, 3));
+        skillDatabase.Add(new SkillData(SkillID.Skill_Range, "더 큰 영혼절단", "영혼절단 공격범위가 증가합니다", SkillRarity.Bronze, 3));
+        skillDatabase.Add(new SkillData(SkillID.Skill_WallBounce, "영혼절단 반사", "영혼절단이 벽에 1회 반사됩니다", SkillRarity.Gold, 1));
+        skillDatabase.Add(new SkillData(SkillID.Skill_Boomerang, "영혼절단 부메랑", "영혼절단이 부메랑처럼 돌아옵니다", SkillRarity.Silver, 1));
+        skillDatabase.Add(new SkillData(SkillID.Skill_Split, "영혼절단 한번에 두개", "영혼절단이 두갈래로 나갑니다", SkillRarity.Gold, 1));
 
         // 궁극기 업그레이드
-        skillDatabase.Add(new SkillData(SkillID.Ultimate_Duration, "궁극기 지속 증가", SkillRarity.Bronze, 2));
-        skillDatabase.Add(new SkillData(SkillID.Ultimate_Damage, "궁극기 위력 증가", SkillRarity.Bronze, 1));
-        skillDatabase.Add(new SkillData(SkillID.Ultimate_Range, "궁극기 범위 증가", SkillRarity.Gold, 1));
-        skillDatabase.Add(new SkillData(SkillID.Ultimate_Cooltime, "궁국기 쿨타임 감소", SkillRarity.Silver, 1));
+        skillDatabase.Add(new SkillData(SkillID.Ultimate_Duration, "더 오래가는 천도광", "천도광 지속시간이 증가합니다", SkillRarity.Bronze, 2));
+        skillDatabase.Add(new SkillData(SkillID.Ultimate_Damage, "더 강력한 천도광", "천도광 위력이 증가합니다", SkillRarity.Bronze, 1));
+        skillDatabase.Add(new SkillData(SkillID.Ultimate_Range, "더 넒은 천도광", "천도광 범위가 증가합니다", SkillRarity.Gold, 1));
+        skillDatabase.Add(new SkillData(SkillID.Ultimate_Cooltime, "더 빠른 천도광", "천도광 쿨타임이 감소합니다", SkillRarity.Silver, 1));
     }
 
     // 하나의 스킬 데이터를 UI 오브젝트에 꽂아주는 함수
@@ -57,7 +57,7 @@ public class Skill_Mgr : MonoBehaviour
         currentCardData = data;
 
         if (m_SkillTitle != null) m_SkillTitle.text = data.skillName;
-        if (m_SkillDesc != null) m_SkillDesc.text = $"{data.rarity} 등급 능력 업그레이드";
+        if (m_SkillDesc != null) m_SkillDesc.text = data.skillDesc;
 
         if (m_SkillIcon != null)
         {
