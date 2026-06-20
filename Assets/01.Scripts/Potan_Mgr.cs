@@ -1,28 +1,36 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Potan_Mgr : MonoBehaviour
 {
-    [Header("Åõ»çÃ¼ ¼³Á¤")]
+    [Header("ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½")]
     public float speed = 15.0f;
     public float damage = 20.0f;
+
+    Rigidbody rigidbody;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Destroy(gameObject, 3.0f); 
+
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * speed);
+        // transform.Translate(Vector3.forward * speed);
+        rigidbody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("Enemy"))
         {
-            //Debug.Log("¸¶¹ý ÀûÁß)");
-            Destroy(gameObject);
+            //Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)");
+            coll.gameObject.GetComponent<Enemy>().Damage(damage);
+
+            Destroy(gameObject); 
         }
 
     }

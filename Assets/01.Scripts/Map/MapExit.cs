@@ -3,6 +3,7 @@ using UnityEngine;
 public class MapExit : MonoBehaviour
 {   
     [SerializeField] GameObject exitCollider;
+    [SerializeField] GameObject exitWall;
 
     MapComponent map;
 
@@ -25,11 +26,13 @@ public class MapExit : MonoBehaviour
     public void DeactivateExit()
     {
         exitCollider.SetActive(false);
+        exitWall.SetActive(true);
     }
 
     public void ActivateExit()
     {
         exitCollider.SetActive(true);
+        exitWall.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)

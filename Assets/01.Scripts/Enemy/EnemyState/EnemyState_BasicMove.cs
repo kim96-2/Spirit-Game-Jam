@@ -33,7 +33,7 @@ public class EnemyState_BasicMove : EnemyState
 
     public override void UpdateState()
     {
-        Debug.Log("In");
+        // Debug.Log("In");
 
         float sqrDistance = Vector3.SqrMagnitude(target.position - agent.transform.position);
 
