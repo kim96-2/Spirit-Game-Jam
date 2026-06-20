@@ -28,7 +28,10 @@ public class PlayerCtrl : MonoBehaviour
     public GameObject BiiimPrefab;
     public Transform firePoint;
 
-    // --- 기획서 연동을 위한 실시간 변수들 ---
+    [Header("사운드 설정")]
+    public AudioClip skillSound;       // 일반 스킬 발사 소리
+    public AudioClip ultimateSound;    // 궁극기(천도광) 발사 소리
+
     [Header("[기획 연동 스펙 수치]")]
     public float normalAttackCooldown = 0.5f;   // 1. 일반공격 빈도 주기
     public int normalMultiShotCount = 1;         // 2. 멀티샷 탄환 개수
@@ -46,10 +49,10 @@ public class PlayerCtrl : MonoBehaviour
     public bool isSkillBoomerang = false;        // 13. 스킬 부메랑 여부
     public bool isSkillSplit = false;            // 14. 스킬 2갈래 발사 여부
 
-    public float ultimateDuration = 5.0f;        // 15. 궁극기 지속 시간
+    public float ultimateDuration = 0.5f;        // 15. 궁극기 지속 시간
     public float ultimateDamageModifier = 1.0f;  // 16. 궁극기 위력 배율
     public float ultimateSizeModifier = 1.0f;    // 17. 궁극기 범위 배율
-    public float ultimateCooldown = 20.0f;       // 18. ★ [변경] 궁극기 쿨타임 (기본 20초)
+    public float ultimateCooldown = 20.0f;       // 18. 궁극기 쿨타임
     // ----------------------------------------
 
     GameObject activeBeam;
@@ -165,6 +168,12 @@ public class PlayerCtrl : MonoBehaviour
                 launchDirection.Normalize();
 
                 SpawnSkillProjectiles(launchDirection);
+
+                // ★ [스킬 사운드 재생] 변수에 오디오가 등록되어 있을 때만 소리 내기
+                if (skillSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(skillSound, transform.position);
+                }
             }
 
             m_SkillTimer = skillCooldown;
@@ -174,6 +183,11 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && ultimateCooldownTimer <= 0 && !isUltimateActive && Game_Mg.IsPointerOverUIObject() == false)
         {
             StartCoroutine(UltimateRoutine());
+
+            if (ultimateSound != null)
+            {
+                AudioSource.PlayClipAtPoint(ultimateSound, transform.position);
+            }
         }
 
         if (isUltimateActive && activeBeam != null)
@@ -226,8 +240,6 @@ public class PlayerCtrl : MonoBehaviour
     IEnumerator UltimateRoutine()
     {
         isUltimateActive = true;
-
-        // ★ 하드코딩 20초 대신, 카드 선택으로 줄어든 실시간 ultimateCooldown 변수가 반영되도록 수정!
         ultimateCooldownTimer = ultimateCooldown;
 
         activeBeam = Instantiate(BiiimPrefab, firePoint.position, firePoint.rotation);
@@ -266,12 +278,10 @@ public class PlayerCtrl : MonoBehaviour
 
     public void Damage(float amount) { }
 
-
     public void ApplySkillUpgrade(SkillID id)
     {
         switch (id)
         {
-            // === 일반 공격 업그레이드 ===
             case SkillID.Normal_FireRate:
                 normalAttackCooldown -= 0.12f;
                 if (normalAttackCooldown < 0.15f) normalAttackCooldown = 0.15f;
@@ -305,7 +315,6 @@ public class PlayerCtrl : MonoBehaviour
                 normalGuidedChance += 0.1f;
                 break;
 
-            // === 스킬 공격 업그레이드 ===
             case SkillID.Skill_Cooldown:
                 skillCooldown -= 1.5f;
                 if (skillCooldown < 1.0f) skillCooldown = 1.0f;
@@ -331,7 +340,6 @@ public class PlayerCtrl : MonoBehaviour
                 isSkillSplit = true;
                 break;
 
-            // === 궁극기 업그레이드 ===
             case SkillID.Ultimate_Duration:
                 ultimateDuration += 1.5f;
                 break;
@@ -343,14 +351,11 @@ public class PlayerCtrl : MonoBehaviour
             case SkillID.Ultimate_Range:
                 ultimateSizeModifier += 0.5f;
                 break;
-                
+
             case SkillID.Ultimate_Cooltime:
-                ultimateCooldown -= 4.0f; // 실버 카드 선택 시 쿨타임 4초씩 감소 예시
-                if (ultimateCooldown < 5.0f) ultimateCooldown = 5.0f; // 최소 무한 발사 방지 마지노선 5초
+                ultimateCooldown -= 4.0f;
+                if (ultimateCooldown < 5.0f) ultimateCooldown = 5.0f;
                 break;
         }
-
-        Debug.Log($"<color=lime>[스펙업] {id} 장착 완료! 현재 변경 스펙 적용됨.</color>");
     }
-
 }

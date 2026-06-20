@@ -6,11 +6,16 @@ public class Skill_Mgr : MonoBehaviour
 {
     public Text m_SkillTitle;
     public Text m_SkillDesc;
-    public Image m_SkillIcon;
+    public Image m_SkillBG;
+    //public Image m_SkillIcon;
+
 
     public Sprite BronseImg;
     public Sprite SilverImg;
     public Sprite GoldImg;
+
+    //public Sprite Skill_Img;
+    //public Sprite Cheondo_Img;
 
     // 현재 카드 UI가 들고 있는 스킬 데이터 (선택 시 활용)
     private SkillData currentCardData;
@@ -59,12 +64,19 @@ public class Skill_Mgr : MonoBehaviour
         if (m_SkillTitle != null) m_SkillTitle.text = data.skillName;
         if (m_SkillDesc != null) m_SkillDesc.text = data.skillDesc;
 
-        if (m_SkillIcon != null)
+        if (m_SkillBG != null)
         {
-            if (data.rarity == SkillRarity.Bronze) m_SkillIcon.sprite = BronseImg;
-            else if (data.rarity == SkillRarity.Silver) m_SkillIcon.sprite = SilverImg;
-            else if (data.rarity == SkillRarity.Gold) m_SkillIcon.sprite = GoldImg;
+            if (data.rarity == SkillRarity.Bronze) m_SkillBG.sprite = BronseImg;
+            else if (data.rarity == SkillRarity.Silver) m_SkillBG.sprite = SilverImg;
+            else if (data.rarity == SkillRarity.Gold) m_SkillBG.sprite = GoldImg;
         }
+
+        //if (m_SkillIcon != null)
+        //{
+        //    if (data.id.ToString().Contains("Normal")) m_SkillIcon.gameObject.SetActive(false);
+        //    if (data.id.ToString().Contains("Ultimate")) m_SkillIcon.sprite = Cheondo_Img;
+        //    if (data.id.ToString().Contains("Skill")) m_SkillIcon.sprite = Skill_Img; // 기본 아이콘
+        //}
     }
 
     public SkillData GetRandomSkillExcept(List<SkillData> excludeList)

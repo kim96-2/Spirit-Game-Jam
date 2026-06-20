@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d7f661afc19b047ac8f51ffe85831d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Potan_Mgr
-  speed: 1
+  speed: 5
   damage: 20
 --- !u!54 &5869379040449536202
 Rigidbody:
