@@ -8,6 +8,7 @@ public class MapManager : MonoBehaviour
     public static MapManager Instance {get => _instance;}
 
     [SerializeField] MapComponent mapPrefab;
+    [SerializeField] MapComponent bossMapPrefab;
 
     [SerializeField] int stageCount = 10;
 
@@ -29,19 +30,23 @@ public class MapManager : MonoBehaviour
         }
 
         _instance = this;
+        MapComponent mapObject;
         int i;
         for(i = 0; i < stageCount; i++)
         {
-            MapComponent mapObject = Instantiate(mapPrefab);
+            mapObject = Instantiate(mapPrefab);
 
             maps.Add(mapObject);
         }
 
+        mapObject = Instantiate(bossMapPrefab);
+        maps.Add(mapObject);
         
-        for(i = 0; i < stageCount - 1; i++)
+        for(i = 0; i < stageCount; i++)
         {
             maps[i].SetMap(i, mapOffset * i, maps[i + 1]);
         }
+        
         maps[i].SetMap(i, mapOffset * i, null);
     }
 

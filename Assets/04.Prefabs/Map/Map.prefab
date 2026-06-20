@@ -785,7 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6714140431934045632}
-  - component: {fileID: 8994006848292416344}
+  - component: {fileID: 7145807719250077624}
   - component: {fileID: 1491212550416657057}
   m_Layer: 0
   m_Name: Map
@@ -814,7 +814,7 @@ Transform:
   - {fileID: 2904536138847044361}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8994006848292416344
+--- !u!114 &7145807719250077624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -823,14 +823,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4885499067362344268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efe0e48976629a41907b643a2736435, type: 3}
+  m_Script: {fileID: 11500000, guid: 94a0d53b33671eb478750e466f0644b5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MapComponent
+  m_EditorClassIdentifier: Assembly-CSharp::MapComponent_Basic
   startPos: {fileID: 2762458753453561572}
   exit: {fileID: 6473473915774008150}
-  enemyPrefab: {fileID: 7970775775799048467, guid: 9891f98ab53cb0542abf6762350987f3, type: 3}
   enemySpawnPosParent: {fileID: 2904536138847044361}
-  enemySpawnCount: 1
+  enemyPrefab: {fileID: 8574334070079709840, guid: 5ca88470f7dbc2b4c883328069c504bc, type: 3}
+  enemySpawnCount: 2
 --- !u!114 &1491212550416657057
 MonoBehaviour:
   m_ObjectHideFlags: 0

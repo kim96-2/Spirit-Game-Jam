@@ -6,6 +6,8 @@ public class MapComponent : MonoBehaviour
 {
     int stageNum;
 
+    public virtual string StageInfo {get => $"STAGE {stageNum}"; }
+
     MapComponent nextMap;
 
     [SerializeField] Transform startPos;
@@ -13,26 +15,9 @@ public class MapComponent : MonoBehaviour
     [SerializeField] MapExit exit;
 
     [Space(15f)]
-    [SerializeField] Enemy enemyPrefab;
-    [SerializeField] Transform enemySpawnPosParent;
-    Transform[] enemySpawnPos;
+    [SerializeField] protected Transform enemySpawnPosParent;
 
-    [SerializeField] int enemySpawnCount = 2;
-    int currentEnemyCount;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void SetMap(int stageNum, Vector3 offsetPos, MapComponent nextMap)
+    public virtual void SetMap(int stageNum, Vector3 offsetPos, MapComponent nextMap)
     {
         transform.position = offsetPos;
 
@@ -40,18 +25,14 @@ public class MapComponent : MonoBehaviour
 
         this.nextMap = nextMap;
 
-        enemySpawnPos = enemySpawnPosParent.GetComponentsInChildren<Transform>();
-
     }
 
-    public void StartMap(Transform player)
+    public virtual void StartMap(Transform player)
     {
         player.position = startPos.position;
 
         exit.SetExit(this);
         exit.DeactivateExit();
-
-        StartCoroutine(StartEnemySpawn());
 
     }
 
@@ -61,33 +42,13 @@ public class MapComponent : MonoBehaviour
 
     }
 
-    public void GoNextMap()
+    public virtual void GoNextMap()
     {
         MapManager.Instance.GoNextMap(stageNum + 1);
     }
 
-    IEnumerator StartEnemySpawn()
+    public virtual void EnemyDestroyed()
     {
-        currentEnemyCount = enemySpawnCount;
-
-        for(int i = 0; i < enemySpawnCount; i++)
-        {
-            Vector3 spawnPos = enemySpawnPos[Random.Range(0, enemySpawnPos.Length)].position;
-            Enemy enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-
-            enemy.SetEnemy(this);
-
-            yield return new WaitForSeconds(2f);
-        }
-    }
-
-    public void EnemyDestroyed()
-    {
-        currentEnemyCount -= 1;
-
-        if(currentEnemyCount == 0)
-        {
-            EndMap();
-        }
+        
     }
 }

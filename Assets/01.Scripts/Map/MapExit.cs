@@ -7,17 +7,6 @@ public class MapExit : MonoBehaviour
 
     MapComponent map;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-    }
-
     public void SetExit(MapComponent map)
     {
         this.map = map;

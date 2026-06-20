@@ -6212,6 +6212,9 @@ MonoBehaviour:
   m_SkillTitle: {fileID: 1749688849}
   m_SkillDesc: {fileID: 438794702}
   m_SkillIcon: {fileID: 1138380545}
+  BronseImg: {fileID: 0}
+  SilverImg: {fileID: 0}
+  GoldImg: {fileID: 0}
   skillDatabase: []
 --- !u!1 &1185043903
 GameObject:
@@ -6542,7 +6545,7 @@ GameObject:
   - component: {fileID: 1623726807}
   - component: {fileID: 1623726806}
   m_Layer: 0
-  m_Name: Map MapManager
+  m_Name: MapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6560,8 +6563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1792affca40a647478fb520fc06402f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
-  mapPrefab: {fileID: 8994006848292416344, guid: 81a950d336da5814eae78a89289cc3ff, type: 3}
-  stageCount: 10
+  mapPrefab: {fileID: 7145807719250077624, guid: 81a950d336da5814eae78a89289cc3ff, type: 3}
+  bossMapPrefab: {fileID: 2737350035646865117, guid: 6f2a4c7798c10ca4daa500504c43fcfb, type: 3}
+  stageCount: 2
   mapOffset: {x: 200, y: 0, z: 0}
   testPlayer: {fileID: 543450652470993782}
 --- !u!4 &1623726807
@@ -6635,6 +6639,9 @@ MonoBehaviour:
   m_SkillTitle: {fileID: 1967458828}
   m_SkillDesc: {fileID: 242661434}
   m_SkillIcon: {fileID: 1656258298}
+  BronseImg: {fileID: 0}
+  SilverImg: {fileID: 0}
+  GoldImg: {fileID: 0}
   skillDatabase: []
 --- !u!114 &1656258297
 MonoBehaviour:
@@ -6774,6 +6781,9 @@ MonoBehaviour:
   m_SkillTitle: {fileID: 940140767}
   m_SkillDesc: {fileID: 50702335}
   m_SkillIcon: {fileID: 1698771088}
+  BronseImg: {fileID: 0}
+  SilverImg: {fileID: 0}
+  GoldImg: {fileID: 0}
   skillDatabase: []
 --- !u!114 &1698771087
 MonoBehaviour:
@@ -12122,6 +12132,24 @@ MonoBehaviour:
   SkillPrefab: {fileID: 8728956983909618445, guid: 0f57a19e4fd5ee74383628d725265da9, type: 3}
   BiiimPrefab: {fileID: 1259858752452096497, guid: 896ef3ddd19a7184abd2068031d9d98c, type: 3}
   firePoint: {fileID: 2130683005}
+  normalAttackCooldown: 0.5
+  normalMultiShotCount: 1
+  normalDamageModifier: 1
+  normalSizeModifier: 1
+  isNormalWallBounce: 0
+  isNormalBoomerang: 0
+  isNormalPenetration: 0
+  normalGuidedChance: 0
+  skillCooldown: 7
+  skillDamageModifier: 1
+  skillSizeModifier: 1
+  isSkillWallBounce: 0
+  isSkillBoomerang: 0
+  isSkillSplit: 0
+  ultimateDuration: 5
+  ultimateDamageModifier: 1
+  ultimateSizeModifier: 1
+  ultimateCooldown: 20
 --- !u!54 &919132148278802894
 Rigidbody:
   m_ObjectHideFlags: 0
