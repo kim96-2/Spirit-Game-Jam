@@ -64,6 +64,11 @@ public class Game_Mg : MonoBehaviour
         m_Player_Hon.fillAmount = 0.0f;
         //easterEggInputField.gameObject.SetActive(false);
 
+        if (Sound_Mgr.Inst != null)
+        {
+            Sound_Mgr.Inst.PlayBgm("Bgm_0", 0.8f);
+        }
+
         if (playerCharacter == null)
         {
             playerCharacter = GameObject.FindAnyObjectByType<PlayerCtrl>();

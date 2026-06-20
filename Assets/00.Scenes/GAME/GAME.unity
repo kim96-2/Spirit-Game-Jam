@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Player_Hon: {fileID: 0}
   playerCharacter: {fileID: 0}
   masterSkillDatabase: []
+  isSkillChoose: 0
   easterEggInputField: {fileID: 0}
 --- !u!65 &80173229
 BoxCollider:
@@ -2819,7 +2820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   mapPrefab: {fileID: 7145807719250077624, guid: 81a950d336da5814eae78a89289cc3ff, type: 3}
   bossMapPrefab: {fileID: 2737350035646865117, guid: 6f2a4c7798c10ca4daa500504c43fcfb, type: 3}
-  stageCount: 5
+  stageCount: 1
   mapOffset: {x: 200, y: 0, z: 0}
   testPlayer: {fileID: 117646986}
 --- !u!4 &945355781
@@ -2955,6 +2956,7 @@ MonoBehaviour:
   m_Player_Hon: {fileID: 2084658969}
   playerCharacter: {fileID: 117646985}
   masterSkillDatabase: []
+  isSkillChoose: 0
   easterEggInputField: {fileID: 684597105}
 --- !u!4 &1012028764
 Transform:

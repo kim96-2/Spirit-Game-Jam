@@ -14,6 +14,8 @@ public class MapComponent_Boss : MapComponent
         base.StartMap(player);
 
         bossTriggerMgr.SetBossTrigger(enemySpawnPosParent, this);
+
+        Sound_Mgr.Inst.PlayBgm("Boss_0", 0.8f);
     }
 
     public void SpawnBoss()
