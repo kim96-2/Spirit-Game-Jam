@@ -8,7 +8,7 @@ public class Main_Mgr : MonoBehaviour
     {
         if (Sound_Mgr.Inst != null)
         {
-            Sound_Mgr.Inst.PlayBgm("Bgm_0", 0.8f);
+            Sound_Mgr.Inst.PlayBgm("Bgm_1", 0.8f);
         }
     }
 

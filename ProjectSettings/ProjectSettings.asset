@@ -843,7 +843,7 @@ PlayerSettings:
     QNX: DOTWEEN
     Standalone: DOTWEEN;MAGICACLOTH2
     VisionOS: DOTWEEN
-    WebGL: DOTWEEN
+    WebGL: DOTWEEN;MAGICACLOTH2
     Windows Store Apps: DOTWEEN
     XboxOne: DOTWEEN
     iPhone: DOTWEEN
