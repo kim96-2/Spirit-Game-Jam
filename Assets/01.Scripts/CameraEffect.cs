@@ -70,7 +70,7 @@ public class CameraEffect : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(duration);
 
-        if (Game_Mg.Inst != null && Game_Mg.Inst.skillselectRoot.activeSelf)
+        if (Game_Mg.Inst.isSkillChoose == true)
         {
             isSlowActive = false;
             yield break;

@@ -25,7 +25,7 @@ public class Game_Mg : MonoBehaviour
 
     [Header("중앙 스킬 데이터베이스")]
     public List<SkillData> masterSkillDatabase = new List<SkillData>();
-    private bool isSkillChoose = false;
+    public bool isSkillChoose = false;
 
     [Header("EasterEgg")]
     public InputField easterEggInputField;
@@ -121,7 +121,7 @@ public class Game_Mg : MonoBehaviour
 
         skillselectRoot.gameObject.SetActive(true);
         Time.timeScale = 0f; // 게임 일시정지        
-        Time.fixedDeltaTime = 0f;
+        //Time.fixedDeltaTime = 0f;
 
         List<SkillData> selectedChoices = new List<SkillData>();
         Skill_Mgr mainDB = skill_Mgrs[0];
@@ -157,7 +157,7 @@ public class Game_Mg : MonoBehaviour
         m_Player_Hon.fillAmount = 0.0f;
         m_CurrentPlayerHon = 0.0f;                          
         Time.timeScale = 1f;
-        Time.fixedDeltaTime = 1f;
+        //Time.fixedDeltaTime = 1f;
         isSkillChoose = false;
     }// public void CloseSkillChoices()
 
