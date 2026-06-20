@@ -100,10 +100,6 @@ public class Skill_Mgr : MonoBehaviour
         currentCardData.currentCount++;
         Debug.Log($"[스킬 선택 완료] {currentCardData.skillName} (현재 {currentCardData.currentCount}개 적용됨)");
 
-        Game_Mg gameMg = FindFirstObjectByType<Game_Mg>(); 
-        if (gameMg != null)
-        {
-            gameMg.CloseSkillChoices();
-        }
+        Game_Mg.Inst.CloseSkillChoices();
     }
 }

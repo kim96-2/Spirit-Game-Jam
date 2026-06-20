@@ -7,6 +7,12 @@ public class Game_Mg : MonoBehaviour
     public GameObject skillselectRoot;
     public Skill_Mgr[] skill_Mgrs;
 
+    public static Game_Mg Inst;
+
+    private void Awake()
+    {
+        Inst = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()    

@@ -113,21 +113,6 @@ public class PlayerCtrl : MonoBehaviour
 
         if (m_AttackTimer <= 0.0f)
         {
-            if (magicPrefab != null && firePoint != null)
-            {
-                Vector3 launchDirection = transform.forward;
-
-                launchDirection.y = 0;
-                launchDirection.Normalize(); 
-
-                Instantiate(magicPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
-            }
-
-            m_AttackTimer = 0.5f;
-        }
-
-        if (Input.GetMouseButton(0) && m_SkillTimer <= 0.0f)
-        {
             Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -138,6 +123,21 @@ public class PlayerCtrl : MonoBehaviour
             {
                 Vector3 targetPosition = ray.GetPoint(rayDistance);
                 Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
+                Instantiate(magicPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
+            }
+
+            m_AttackTimer = 0.5f;
+        }
+
+        if (Input.GetMouseButton(0) && m_SkillTimer <= 0.0f)
+        {
+            if (SkillPrefab != null && firePoint != null)
+            {
+                Vector3 launchDirection = transform.forward;
+
+                launchDirection.y = 0;
+                launchDirection.Normalize();
+
                 Instantiate(SkillPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
             }
 

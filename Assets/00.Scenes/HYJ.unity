@@ -1335,7 +1335,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1138380545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138380547}
+        m_TargetAssemblyTypeName: Skill_Mgr, Assembly-CSharp
+        m_MethodName: OnClickSkillCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1138380545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,7 +1820,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1656258298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1656258296}
+        m_TargetAssemblyTypeName: Skill_Mgr, Assembly-CSharp
+        m_MethodName: OnClickSkillCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1656258298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,7 +2111,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1698771088}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1698771086}
+        m_TargetAssemblyTypeName: Skill_Mgr, Assembly-CSharp
+        m_MethodName: OnClickSkillCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1698771088
 MonoBehaviour:
   m_ObjectHideFlags: 0
