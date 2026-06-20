@@ -389,6 +389,7 @@ MonoBehaviour:
   Skill_0: {fileID: 0}
   Skill_1: {fileID: 0}
   m_Player_Hon: {fileID: 0}
+  m_PlayerHp: {fileID: 0}
   playerCharacter: {fileID: 0}
   masterSkillDatabase: []
   isSkillChoose: 0
@@ -2773,6 +2774,7 @@ MonoBehaviour:
   Skill_0: {fileID: 917340049}
   Skill_1: {fileID: 691938474}
   m_Player_Hon: {fileID: 2084658969}
+  m_PlayerHp: {fileID: 2066209465}
   playerCharacter: {fileID: 117646985}
   masterSkillDatabase: []
   isSkillChoose: 0

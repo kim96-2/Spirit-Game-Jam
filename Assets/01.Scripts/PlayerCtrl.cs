@@ -345,7 +345,7 @@ public class PlayerCtrl : MonoBehaviour
 
         if (Game_Mg.Inst != null)
         {
-            Game_Mg.Inst.m_Player_Hon.fillAmount = playerCurrentHp / playerMaxHp;
+            Game_Mg.Inst.m_PlayerHp.fillAmount = playerCurrentHp / playerMaxHp;
         }
     }
 

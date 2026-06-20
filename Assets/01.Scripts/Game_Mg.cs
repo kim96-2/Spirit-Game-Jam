@@ -16,6 +16,8 @@ public class Game_Mg : MonoBehaviour
 
     public Image m_Player_Hon;
 
+    public Image m_PlayerHp;
+
     [SerializeField] private PlayerCtrl playerCharacter;
 
     [Header("Skill_Hon")]
