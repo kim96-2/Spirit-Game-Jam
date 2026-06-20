@@ -480,6 +480,7 @@ MonoBehaviour:
   Skill_1: {fileID: 0}
   m_Player_Hon: {fileID: 0}
   playerCharacter: {fileID: 0}
+  masterSkillDatabase: []
   easterEggInputField: {fileID: 0}
 --- !u!65 &80173229
 BoxCollider:
@@ -2953,6 +2954,7 @@ MonoBehaviour:
   Skill_1: {fileID: 691938474}
   m_Player_Hon: {fileID: 2084658969}
   playerCharacter: {fileID: 117646985}
+  masterSkillDatabase: []
   easterEggInputField: {fileID: 684597105}
 --- !u!4 &1012028764
 Transform:

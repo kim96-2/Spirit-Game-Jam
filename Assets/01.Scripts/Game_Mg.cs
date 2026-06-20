@@ -147,9 +147,8 @@ public class Game_Mg : MonoBehaviour
         skillselectRoot.gameObject.SetActive(false); // UI ��Ʈ ����
 
         m_Player_Hon.fillAmount = 0.0f;
-        Time.timeScale = 1f;                         // ���� �ð� ����ȭ (�ٽ� ������!)
-        m_CurrentPlayerHon = 0.0f;                          // 플레이어 혼 초기화
-        //Debug.Log("��ų ���� UI ���� - ���� �簳");
+        m_CurrentPlayerHon = 0.0f;                          
+        Time.timeScale = 1f;
     }// public void CloseSkillChoices()
 
     public static bool IsPointerOverUIObject() //UGUI�� UI���� ���� ��ŷ�Ǵ��� Ȯ���ϴ� �Լ�
