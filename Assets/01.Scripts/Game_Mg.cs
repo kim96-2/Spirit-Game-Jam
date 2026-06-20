@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Game_Mg : MonoBehaviour
 {
@@ -72,6 +73,16 @@ public class Game_Mg : MonoBehaviour
         Time.timeScale = 1f;                         // 게임 시간 정상화 (다시 움직임!)
         Debug.Log("스킬 선택 UI 닫힘 - 게임 재개");
     }// public void CloseSkillChoices()
+
+    public static bool IsPointerOverUIObject() //UGUI의 UI들이 먼저 피킹되는지 확인하는 함수
+    {
+        PointerEventData a_EDCurPos = new PointerEventData(EventSystem.current);
+
+        a_EDCurPos.position = Input.mousePosition;
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(a_EDCurPos, results);
+        return (0 < results.Count);
+    }//public bool IsPointerOverUIObject() 
 }
 
 

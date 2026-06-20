@@ -111,7 +111,7 @@ public class PlayerCtrl : MonoBehaviour
         m_AttackTimer -= Time.deltaTime;
         m_SkillTimer -= Time.deltaTime;
 
-        if (m_AttackTimer <= 0.0f)
+        if (m_AttackTimer <= 0.0f && Game_Mg.IsPointerOverUIObject() == false)
         {
             Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
 
@@ -129,8 +129,9 @@ public class PlayerCtrl : MonoBehaviour
             m_AttackTimer = 0.5f;
         }
 
-        if (Input.GetMouseButton(0) && m_SkillTimer <= 0.0f)
+        if (Input.GetMouseButton(0) && m_SkillTimer <= 0.0f && Game_Mg.IsPointerOverUIObject() == false)
         {
+
             if (SkillPrefab != null && firePoint != null)
             {
                 Vector3 launchDirection = transform.forward;
@@ -144,7 +145,7 @@ public class PlayerCtrl : MonoBehaviour
             m_SkillTimer = 7.0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && ultimateCooldownTimer <= 0 && !isUltimateActive)
+        if (Input.GetKeyDown(KeyCode.Space) && ultimateCooldownTimer <= 0 && !isUltimateActive && Game_Mg.IsPointerOverUIObject() == false)
         {
             StartCoroutine(UltimateRoutine());
         }

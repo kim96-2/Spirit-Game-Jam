@@ -8,7 +8,8 @@ public class Skill_Mgr : MonoBehaviour
     public Text m_SkillDesc;
     public Image m_SkillIcon;
 
-    SkillData currentCardData; // 현재 카드에 꽂힌 스킬 데이터 (선택 시 활용)
+    // 현재 카드 UI가 들고 있는 스킬 데이터 (선택 시 활용)
+    private SkillData currentCardData;
 
     public List<SkillData> skillDatabase = new List<SkillData>();
 
@@ -44,23 +45,24 @@ public class Skill_Mgr : MonoBehaviour
         skillDatabase.Add(new SkillData(SkillID.Ultimate_SoulCost, "필요 혼 게이지 감소", SkillRarity.Silver, 1));
     }
 
-    // ★ 추가: 하나의 스킬 데이터를 UI 오브젝트에 꽂아주는 함수
+    // 하나의 스킬 데이터를 UI 오브젝트에 꽂아주는 함수
     public void SetSkillUI(SkillData data)
     {
         if (data == null) return;
 
-        m_SkillTitle.text = data.skillName;
-        m_SkillDesc.text = $"{data.rarity} 등급 능력 업그레이드";
+        currentCardData = data;
 
-        // 등급별 카드 색상 구분 예시 (기획서 반영)
-        if (data.rarity == SkillRarity.Bronze) m_SkillIcon.color = new Color32(139, 115, 85, 255); // 브론즈색
-        else if (data.rarity == SkillRarity.Silver) m_SkillIcon.color = new Color32(192, 192, 192, 255); // 실버색
-        else if (data.rarity == SkillRarity.Gold) m_SkillIcon.color = new Color32(212, 175, 55, 255); // 골드색
+        if (m_SkillTitle != null) m_SkillTitle.text = data.skillName;
+        if (m_SkillDesc != null) m_SkillDesc.text = $"{data.rarity} 등급 능력 업그레이드";
+
+        if (m_SkillIcon != null)
+        {
+            if (data.rarity == SkillRarity.Bronze) m_SkillIcon.color = new Color32(139, 115, 85, 255); // 브론즈색
+            else if (data.rarity == SkillRarity.Silver) m_SkillIcon.color = new Color32(192, 192, 192, 255); // 실버색
+            else if (data.rarity == SkillRarity.Gold) m_SkillIcon.color = new Color32(212, 175, 55, 255); // 골드색
+        }
     }
 
-    /// <summary>
-    /// 무작위 능력을 뽑되, '제외 목록(excludeList)'에 포함된 스킬은 피해서 뽑는 함수
-    /// </summary>
     public SkillData GetRandomSkillExcept(List<SkillData> excludeList)
     {
         List<SkillData> availableSkills = new List<SkillData>();
@@ -95,11 +97,24 @@ public class Skill_Mgr : MonoBehaviour
 
     public void OnClickSkillCard()
     {
-        if (currentCardData == null) return;
+        if (currentCardData == null)
+        {
+            Debug.LogError($"{gameObject.name} 카드의 스킬 데이터가 비어있습니다!");
+            return;
+        }
 
+        // 1. 기획서 규칙: 해당 스킬 획득 카운트 1 증가
         currentCardData.currentCount++;
-        Debug.Log($"[스킬 선택 완료] {currentCardData.skillName} (현재 {currentCardData.currentCount}개 적용됨)");
+        Debug.Log($"[스킬 선택 완료] {currentCardData.skillName} (현재 {currentCardData.currentCount}/{currentCardData.maxCount}개 적용됨)");
 
-        Game_Mg.Inst.CloseSkillChoices();
+        // 2. 싱글톤 매니저를 호출해 UI 창을 닫고 시간 재생(Time.timeScale = 1)
+        if (Game_Mg.Inst != null)
+        {
+            Game_Mg.Inst.CloseSkillChoices();
+        }
+        else
+        {
+            Debug.LogError("Game_Mg 싱글톤 인스턴스(Inst)를 찾을 수 없습니다.");
+        }
     }
 }
