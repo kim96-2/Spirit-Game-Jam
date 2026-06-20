@@ -20,7 +20,7 @@ public class Potan_Mgr : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 3.0f);
+        Destroy(gameObject, 5.0f);
         rigidbody = GetComponent<Rigidbody>();
     }
 
