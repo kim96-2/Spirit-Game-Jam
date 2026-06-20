@@ -2,9 +2,9 @@ using UnityEngine;
 
 public enum SkillRarity
 {
-    bronze,
-    silver,
-    gold,
+    Bronze,
+    Silver,
+    Gold,
     None
 }
 
