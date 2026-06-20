@@ -6,6 +6,7 @@ public class EnemyShooter : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform shootPos;
+    [SerializeField] float damage = 6f;
 
     Enemy enemy;
 
@@ -24,6 +25,6 @@ public class EnemyShooter : MonoBehaviour
         // GameObject bullet = Instantiate(bulletPrefab,shootPos.position, Quaternion.identity);
         GameObject bullet = ObjectPoolManager.Instance.Get(bulletPrefab, shootPos.position, Quaternion.identity);
 
-        bullet.GetComponent<EnemyBullet>().Shoot(dir, enemy);
+        bullet.GetComponent<EnemyBullet>().Shoot(dir, enemy, damage);
     }
 }

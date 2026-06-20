@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float hp = 100f;
     [SerializeField] GameObject destroyParticle;
+    [SerializeField] Transform model;
     
     protected NavMeshAgent navMeshAgent;
     protected Transform target;
@@ -30,6 +31,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         currentState?.UpdateState();
+
+        Vector3 lookDirection = target.position - transform.position;
+        lookDirection.y = 0f;
+        lookDirection.Normalize();
+
+        model.transform.rotation = Quaternion.Slerp(model.transform.rotation, Quaternion.LookRotation(lookDirection), 5f * Time.deltaTime);
     }
 
     protected virtual void SetEnemyState()
@@ -43,6 +50,7 @@ public class Enemy : MonoBehaviour
         currentMap = map;
 
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.angularSpeed = 0f;
         target = GameObject.FindWithTag("Player").transform;
 
         SetEnemyState();

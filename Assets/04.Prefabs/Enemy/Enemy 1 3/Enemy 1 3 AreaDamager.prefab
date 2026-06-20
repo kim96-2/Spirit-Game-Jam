@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1658532943173319834}
   - component: {fileID: 1424988548594709853}
   m_Layer: 0
-  m_Name: AreaDamager
+  m_Name: Enemy 1 3 AreaDamager
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaDamager
   damageRange: 4
-  tickDamage: 5
+  tickDamage: 2
   damageDuration: 5
 --- !u!1 &4799379681666605697
 GameObject:
