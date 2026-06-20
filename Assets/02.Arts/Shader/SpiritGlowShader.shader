@@ -31,12 +31,14 @@ Shader "Custom/Spirit Glow"
             {
                 float4 positionOS : POSITION;
                 float2 uv : TEXCOORD0;
+                float4 color : COLOR;
             };
 
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION;
                 float2 uv : TEXCOORD0;
+                float4 color : TEXCOORD1;
             };
 
             TEXTURE2D(_BaseMap);
@@ -55,17 +57,21 @@ Shader "Custom/Spirit Glow"
             {
                 Varyings OUT;
 
-                float3 dir = normalize(IN.positionOS.xyz);
-                dir *= sin(Unity_Random(IN.positionOS.xyz) * 1000 + _Time.y * 2) * 0.08;
-                dir.y += sin(_Time.y * 2) * 0.2;
+                // float3 dir = normalize(IN.positionOS.xyz);
+                // dir *= sin(Unity_Random(IN.positionOS.xyz) * 1000 + _Time.y * 2) * 0.08;
+                // dir.y += sin(_Time.y * 2) * 0.2;
 
-                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz + dir);
+                // OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz + dir);
+
+                OUT.color = IN.color;
+
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
                 return OUT;
             }
 
             half4 frag(Varyings IN) : SV_Target
             {
-                half4 color = _BaseColor;
+                half4 color = _BaseColor * IN.color;
                 return color;
             }
             ENDHLSL

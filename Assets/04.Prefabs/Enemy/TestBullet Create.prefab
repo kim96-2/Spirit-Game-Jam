@@ -34,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 174.62816, y: -0, z: 4.24911}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8303004257505010363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8963036385655681030
@@ -52,7 +53,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5365897962670676417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -170,3 +171,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3fa592611bd62f45bd0cfd5c653c2cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Core.PoolObject
+--- !u!1001 &2796786203177174736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7668808735965039922}
+    m_Modifications:
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754246530555900750, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+      propertyPath: m_Name
+      value: Spirit Preset Red
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+--- !u!4 &8303004257505010363 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6190791811992298603, guid: 133c9f6063781af4b8146f67d1ed3e31, type: 3}
+  m_PrefabInstance: {fileID: 2796786203177174736}
+  m_PrefabAsset: {fileID: 0}

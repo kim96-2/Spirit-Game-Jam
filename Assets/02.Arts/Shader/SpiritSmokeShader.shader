@@ -19,8 +19,8 @@ Shader "Custom/Spirit Smoke"
                 Pass Keep
             }
 
-            // Blend SrcAlpha OneMinusSrcAlpha
-            Blend One One
+            Blend SrcAlpha OneMinusSrcAlpha
+            // Blend One One
 
             HLSLPROGRAM
 
@@ -33,12 +33,14 @@ Shader "Custom/Spirit Smoke"
             {
                 float4 positionOS : POSITION;
                 float2 uv : TEXCOORD0;
+                float4 color : COLOR;
             };
 
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION;
                 float2 uv : TEXCOORD0;
+                float4 color : TEXCOORD1;
             };
 
             TEXTURE2D(_BaseMap);
@@ -50,13 +52,16 @@ Shader "Custom/Spirit Smoke"
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
+
+                OUT.color = IN.color;
+
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
                 return OUT;
             }
 
             half4 frag(Varyings IN) : SV_Target
             {
-                half4 color = _BaseColor;
+                half4 color = _BaseColor * IN.color;
                 return color;
             }
             ENDHLSL
