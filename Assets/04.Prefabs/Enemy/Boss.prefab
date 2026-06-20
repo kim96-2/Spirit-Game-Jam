@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2233069569802564802}
   - component: {fileID: 8241443969828066855}
   m_Layer: 0
-  m_Name: Test Boss
+  m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8f182b5ae022a4faf6827fcce70430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Boss
-  hp: 200
+  hp: 300
   destroyParticle: {fileID: 0}
   model: {fileID: 5897910525851589098}
   shooter1: {fileID: 5852318751366209705}
@@ -224,15 +224,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3165745290c14914d94981187dc317ba, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.48
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3165745290c14914d94981187dc317ba, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.48
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3165745290c14914d94981187dc317ba, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.48
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3165745290c14914d94981187dc317ba, type: 3}
       propertyPath: m_LocalPosition.x

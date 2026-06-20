@@ -6,7 +6,7 @@ Shader "Custom/ToonShader"
         [MainTexture] _BaseMap("Base Map", 2D) = "white" {}
 
         [Space(15)]
-        _EmissionMap("Emission Map", 2D) = "black" {}
+        _EmissionMap("Emission Map", 2D) = "white" {}
         [HDR]_EmissionColor("Emission Color", Color) = (0, 0, 0, 1)
     }
 
