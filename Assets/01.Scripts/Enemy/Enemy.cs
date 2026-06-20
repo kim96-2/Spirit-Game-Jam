@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour
     MapComponent currentMap;
 
     EnemyState currentState;
+
+    public event Action OnEnemyDestroyed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,6 +57,8 @@ public class Enemy : MonoBehaviour
     void DestoryEnemy()
     {
         currentMap.EnemyDestroyed();
+
+        OnEnemyDestroyed?.Invoke();
 
         Destroy(this.gameObject);
     }
