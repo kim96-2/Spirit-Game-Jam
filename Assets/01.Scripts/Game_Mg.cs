@@ -1,12 +1,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Game_Mg : MonoBehaviour
 {
     [Header("Skill_Select_UI")]
     public GameObject skillselectRoot;
     public Skill_Mgr[] skill_Mgrs;
+
+    [Header("UI")]
+    public Image Boss_Img;
+    public Sprite Boss_Paze2;
+
+    public Image Skill_0;
+    public Image Skill_1;
+
+    public Image Player_HpBar;
+    public Image Boss_HpBar;
+
+    public Image m_Player_Hon;
+
+    [Header("EasterEgg")]
+    public InputField easterEggInputField;
+    [HideInInspector] public static bool isBossStage = false;
 
     public static Game_Mg Inst;
 
@@ -19,6 +37,7 @@ public class Game_Mg : MonoBehaviour
     void Start()    
     {
         skillselectRoot.gameObject.SetActive(false);
+        easterEggInputField.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,6 +46,16 @@ public class Game_Mg : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             GenerateSkillChoices();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Numlock)) //&& ))isBossStage == true
+        {
+            easterEggInputField.gameObject.SetActive(true);
+        }
+
+        if (easterEggInputField.text == "tiger")
+        {
+            SceneManager.LoadScene("EasterEnding");
         }
     }// void Update()
 
@@ -66,6 +95,7 @@ public class Game_Mg : MonoBehaviour
             }
         }
     }// public void GenerateSkillChoices()
+
 
     public void CloseSkillChoices()
     {
