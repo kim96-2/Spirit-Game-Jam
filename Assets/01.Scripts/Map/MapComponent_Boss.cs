@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapComponent_Boss : MapComponent
 {
@@ -32,11 +33,7 @@ public class MapComponent_Boss : MapComponent
 
     public override void GoNextMap()
     {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit(); // 어플리케이션 종료
-#endif
+        SceneManager.LoadScene("GAMECLEAR");
     }
 
     public override void EnemyDestroyed()
