@@ -37,7 +37,7 @@ public class Game_Mg : MonoBehaviour
     void Start()    
     {
         skillselectRoot.gameObject.SetActive(false);
-        easterEggInputField.gameObject.SetActive(false);
+        //easterEggInputField.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,12 +51,13 @@ public class Game_Mg : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Numlock)) //&& ))isBossStage == true
         {
             easterEggInputField.gameObject.SetActive(true);
+            if (easterEggInputField.text == "tiger")
+            {
+                SceneManager.LoadScene("EasterEnding");
+            }
         }
 
-        if (easterEggInputField.text == "tiger")
-        {
-            SceneManager.LoadScene("EasterEnding");
-        }
+       
     }// void Update()
 
     public void GenerateSkillChoices()

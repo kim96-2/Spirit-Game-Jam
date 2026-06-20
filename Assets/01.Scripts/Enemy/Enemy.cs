@@ -54,7 +54,10 @@ public class Enemy : MonoBehaviour
     {
         hp -= damage;
 
-        if(hp < 0) DestoryEnemy();
+        if (hp <= 0)
+        {
+            DestoryEnemy();
+        }
     }
 
     void DestoryEnemy()

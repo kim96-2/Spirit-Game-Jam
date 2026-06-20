@@ -130,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Potan_Mgr
   speed: 15
   damage: 20
+  m_SlowDuration: 1.5
+  m_SlowTimeScale: 0.9
   destroyParticle: {fileID: 6108943641445898577, guid: d2bbe41d00562b1478f7c295a8afd619, type: 3}
 --- !u!54 &1710468304015253896
 Rigidbody:

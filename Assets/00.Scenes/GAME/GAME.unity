@@ -243,6 +243,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Game_Mg
   skillselectRoot: {fileID: 0}
   skill_Mgrs: []
+  Boss_Img: {fileID: 0}
+  Boss_Paze2: {fileID: 0}
+  Skill_0: {fileID: 0}
+  Skill_1: {fileID: 0}
+  Player_HpBar: {fileID: 0}
+  Boss_HpBar: {fileID: 0}
+  m_Player_Hon: {fileID: 0}
+  easterEggInputField: {fileID: 0}
 --- !u!65 &80173229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1153,6 +1161,7 @@ GameObject:
   - component: {fileID: 296239791}
   - component: {fileID: 296239790}
   - component: {fileID: 296239789}
+  - component: {fileID: 296239794}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1310,6 +1319,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -0.03, z: 0}
+--- !u!114 &296239794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296239788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab66518e3d957745b60077aa5a5d5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraEffect
+  virtualCamera: {fileID: 245367867}
 --- !u!1 &519579010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,6 +2266,14 @@ MonoBehaviour:
   - {fileID: 825083100}
   - {fileID: 820677308}
   - {fileID: 110429474}
+  Boss_Img: {fileID: 0}
+  Boss_Paze2: {fileID: 0}
+  Skill_0: {fileID: 0}
+  Skill_1: {fileID: 0}
+  Player_HpBar: {fileID: 0}
+  Boss_HpBar: {fileID: 0}
+  m_Player_Hon: {fileID: 0}
+  easterEggInputField: {fileID: 0}
 --- !u!4 &1012028764
 Transform:
   m_ObjectHideFlags: 0
