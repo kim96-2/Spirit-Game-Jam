@@ -64,7 +64,7 @@ public class PlayerCtrl : MonoBehaviour
 
         Attack();
     }//void Update()
-    
+
     void FixedUpdate()
     {
         if (isDashing)
@@ -78,12 +78,24 @@ public class PlayerCtrl : MonoBehaviour
             {
                 Vector3 targetPos = rb.position + (dashDirection * dashSpeed * Time.fixedDeltaTime);
                 rb.MovePosition(targetPos);
+
+                // 대시할 때도 대시 방향을 즉시 바라봄
+                if (dashDirection != Vector3.zero)
+                {
+                    rb.MoveRotation(Quaternion.LookRotation(dashDirection));
+                }
                 return;
             }
-        }//if (isDashing)
+        }
 
+        // [일반 이동]
         Vector3 movePos = rb.position + (moveInput * moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(movePos);
+
+        if (moveInput != Vector3.zero)
+        {
+            rb.MoveRotation(Quaternion.LookRotation(moveInput));
+        }
     }//void FixedUpdate()
 
     void StartDash()
@@ -103,21 +115,15 @@ public class PlayerCtrl : MonoBehaviour
         {
             if (magicPrefab != null && firePoint != null)
             {
-                Plane groundPlane = new Plane(Vector3.up, new Vector3(0, firePoint.position.y, 0));
+                Vector3 launchDirection = transform.forward;
 
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                launchDirection.y = 0;
+                launchDirection.Normalize(); 
 
-                float rayDistance;
-
-                if (groundPlane.Raycast(ray, out rayDistance))
-                {
-                    Vector3 targetPosition = ray.GetPoint(rayDistance);
-                    Vector3 launchDirection = (targetPosition - firePoint.position).normalized;
-                    Instantiate(magicPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
-                }
+                Instantiate(magicPrefab, firePoint.position, Quaternion.LookRotation(launchDirection));
             }
 
-            m_AttackTimer = 0.5f; 
+            m_AttackTimer = 0.5f;
         }
 
         if (Input.GetMouseButton(0) && m_SkillTimer <= 0.0f)
