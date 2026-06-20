@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 
         SetEnemyState();
 
-        Invoke("DestoryEnemy", 10f);
+        // Invoke("DestoryEnemy", 10f);
     }
 
     public void Damage(float damage)

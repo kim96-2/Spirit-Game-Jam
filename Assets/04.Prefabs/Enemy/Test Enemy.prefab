@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8513312428459712627}
   m_Layer: 0
   m_Name: Test Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1006.5283, y: -0, z: -53.25538}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 462344131110458902}
@@ -114,8 +114,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.1568604, y: 3.3891234, z: 1.8835526}
+  m_Center: {x: 0.008605957, y: 1.1945617, z: -0.10172272}
 --- !u!195 &6957996112198943694
 NavMeshAgent:
   m_ObjectHideFlags: 0

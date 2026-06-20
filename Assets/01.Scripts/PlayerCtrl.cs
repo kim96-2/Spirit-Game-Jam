@@ -6,10 +6,10 @@ public class PlayerCtrl : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveInput;
 
-    [Header("ÀÌµ¿ ¼³Á¤")]
+    [Header("ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public float moveSpeed = 5.0f;
 
-    [Header("´ë½Ã ¼³Á¤")]
+    [Header("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public float dashSpeed = 100.0f;
     public float dashDuration = 0.1f;
     public float dashCooldown = 1.0f;
@@ -21,7 +21,7 @@ public class PlayerCtrl : MonoBehaviour
     private bool isDashing = false;
 
 
-    [Header("°ø°Ý °ü·Ã")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public GameObject magicPrefab;
     public GameObject SkillPrefab;
     public GameObject BiiimPrefab;
@@ -79,7 +79,7 @@ public class PlayerCtrl : MonoBehaviour
                 Vector3 targetPos = rb.position + (dashDirection * dashSpeed * Time.fixedDeltaTime);
                 rb.MovePosition(targetPos);
 
-                // ´ë½ÃÇÒ ¶§µµ ´ë½Ã ¹æÇâÀ» Áï½Ã ¹Ù¶óº½
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ù¶ï¿½
                 if (dashDirection != Vector3.zero)
                 {
                     rb.MoveRotation(Quaternion.LookRotation(dashDirection));
@@ -88,7 +88,7 @@ public class PlayerCtrl : MonoBehaviour
             }
         }
 
-        // [ÀÏ¹Ý ÀÌµ¿]
+        // [ï¿½Ï¹ï¿½ ï¿½Ìµï¿½]
         Vector3 movePos = rb.position + (moveInput * moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(movePos);
 
@@ -200,4 +200,13 @@ public class PlayerCtrl : MonoBehaviour
             }
         }
     }
+
+    #region Damage
+
+    public void Damage(float amount)
+    {
+        
+    }
+
+    #endregion
 }

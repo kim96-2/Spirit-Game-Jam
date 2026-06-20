@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float damageAmount = 10f;
 
     PoolObject poolObject;
     Rigidbody rigidbody;
@@ -50,6 +51,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            other.GetComponent<PlayerCtrl>().Damage(damageAmount);
             DestroyBullet();
         }
 
