@@ -5,15 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyBullet : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] float damageAmount = 10f;
 
     PoolObject poolObject;
-    Rigidbody rigidbody;
+    protected Rigidbody rigidbody;
 
-    Vector3 shootDir;
+    protected Vector3 shootDir;
 
-    Enemy enemy;
+    protected Enemy enemy;
 
     float _destroyTime = 0f;
 
@@ -23,15 +23,25 @@ public class EnemyBullet : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
+    void Update()
+    {
+        CheckDestroyTime();
+    }
+
     void FixedUpdate()
     {
         MoveBullet();
+
     }
 
     protected virtual void MoveBullet()
     {
-        rigidbody.MovePosition(transform.position + shootDir * moveSpeed);
+        rigidbody.MovePosition(transform.position + shootDir * moveSpeed * Time.deltaTime);
 
+    }
+
+    void CheckDestroyTime()
+    {
         if(_destroyTime > 10f) DestroyBullet();
         _destroyTime += Time.deltaTime;
     }

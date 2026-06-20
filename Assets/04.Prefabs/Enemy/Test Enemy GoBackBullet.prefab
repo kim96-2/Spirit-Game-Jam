@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8574334070079709840}
   - component: {fileID: 8513312428459712627}
   m_Layer: 0
-  m_Name: Test Enemy
+  m_Name: Test Enemy GoBackBullet
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267ee161cad62d1408633099ba761905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
-  bulletPrefab: {fileID: 5365897962670676417, guid: b14ec7f39e2b7ff4cb16592dd65884d7, type: 3}
+  bulletPrefab: {fileID: 5365897962670676417, guid: 7be2a0f1d11d2114da1c432b7e5ee5c0, type: 3}
   shootPos: {fileID: 462344131110458902}
 --- !u!1 &2390546303174360124
 GameObject:

@@ -29,6 +29,10 @@ public class EnemyState_BasicMove : EnemyState
     public override void Enter()
     {
         _time = 0f;
+
+        agent.isStopped = false;
+
+        // agent.speed = 0.01f;    
     }
 
     public override void UpdateState()
@@ -37,7 +41,15 @@ public class EnemyState_BasicMove : EnemyState
 
         float sqrDistance = Vector3.SqrMagnitude(target.position - agent.transform.position);
 
-        if(sqrDistance > maxRange * maxRange) agent.SetDestination(target.position);
+        if(sqrDistance > maxRange * maxRange) 
+        {
+            agent.SetDestination(target.position);
+            agent.isStopped = false;
+        }
+        else
+        {
+            agent.isStopped = true;
+        }
 
         if(_time > duration) 
         {
@@ -46,5 +58,10 @@ public class EnemyState_BasicMove : EnemyState
         }
         _time += Time.deltaTime;
 
+    }
+
+    public override void Exit()
+    {
+        agent.isStopped = true;
     }
 }

@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4729033413699387790}
   - component: {fileID: 8527049186082692226}
   - component: {fileID: 3489949750197448828}
-  - component: {fileID: 7709096097356364186}
+  - component: {fileID: 6125387711756414695}
   - component: {fileID: 5308686600697836642}
   m_Layer: 0
-  m_Name: TestBullet
+  m_Name: TestBullet Goback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f8e6e1a7d82d92e45b54133f67a6ae3a, type: 2}
+  - {fileID: 2100000, guid: 8bca96313bf103d44a7f81176f1a25ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -142,7 +142,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7709096097356364186
+--- !u!114 &6125387711756414695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,11 +151,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5365897962670676417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d0b71ee43c0cbd449dbb06fa0920731, type: 3}
+  m_Script: {fileID: 11500000, guid: efcb0b841c1443b4d9bb586c2b5fffa3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
-  moveSpeed: 5
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet_Follow
+  moveSpeed: 8
   damageAmount: 10
+  secondTargetGoTime: 2
 --- !u!114 &5308686600697836642
 MonoBehaviour:
   m_ObjectHideFlags: 0
