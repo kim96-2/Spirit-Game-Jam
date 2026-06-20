@@ -828,9 +828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapComponent
   startPos: {fileID: 2762458753453561572}
   exit: {fileID: 6473473915774008150}
-  enemyPrefab: {fileID: 8574334070079709840, guid: 5ca88470f7dbc2b4c883328069c504bc, type: 3}
+  enemyPrefab: {fileID: 7970775775799048467, guid: 9891f98ab53cb0542abf6762350987f3, type: 3}
   enemySpawnPosParent: {fileID: 2904536138847044361}
-  enemySpawnCount: 5
+  enemySpawnCount: 1
 --- !u!114 &1491212550416657057
 MonoBehaviour:
   m_ObjectHideFlags: 0

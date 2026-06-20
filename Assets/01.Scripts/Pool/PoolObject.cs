@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,13 @@ namespace Game.Core
 
         public EntityId PrefabID { get { return _prefabID; } set { _prefabID = value; } }
 
+        public Action OnGet;
+
         public void Get()
         {
             gameObject.SetActive(true);
+
+            OnGet?.Invoke();
         }
 
         public void Release()
@@ -23,6 +28,8 @@ namespace Game.Core
 
                 this.transform.position = Vector3.zero;
                 this.gameObject.SetActive(false);
+
+                // OnGet = null;
 
                 return;
             }
