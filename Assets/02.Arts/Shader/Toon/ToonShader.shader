@@ -4,6 +4,10 @@ Shader "Custom/ToonShader"
     {
         [MainColor] _BaseColor("Base Color", Color) = (1, 1, 1, 1)
         [MainTexture] _BaseMap("Base Map", 2D) = "white" {}
+
+        [Space(15)]
+        _EmissionMap("Emission Map", 2D) = "black" {}
+        [HDR]_EmissionColor("Emission Color", Color) = (0, 0, 0, 1)
     }
 
     SubShader
@@ -49,9 +53,13 @@ Shader "Custom/ToonShader"
             TEXTURE2D(_BaseMap);
             SAMPLER(sampler_BaseMap);
 
+            TEXTURE2D(_EmissionMap);
+            SAMPLER(sampler_EmissionMap);
+
             CBUFFER_START(UnityPerMaterial)
                 half4 _BaseColor;
                 float4 _BaseMap_ST;
+                half4 _EmissionColor;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -81,6 +89,12 @@ Shader "Custom/ToonShader"
                 gi *= color.rgb;
 
                 half4 finalColor = half4(gi + color.rgb * lightColor * ndotl, color.a);
+
+                half3 emission = SAMPLE_TEXTURE2D(_EmissionMap, sampler_EmissionMap, IN.uv).rgb;
+                emission *= _EmissionColor.rgb;
+
+                finalColor.rgb += emission;
+
                 return finalColor;
             }
             ENDHLSL
@@ -150,6 +164,8 @@ Shader "Custom/ToonShader"
             CBUFFER_START(UnityPerMaterial)
                 half4 _BaseColor;
                 float4 _BaseMap_ST;
+
+                half4 _EmissionColor;
             CBUFFER_END
 
             float4 GetShadowPositionHClip(Attributes input)
