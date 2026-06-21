@@ -19,7 +19,7 @@ Shader "Custom/ToonShader"
             Name "ForwardLit"
             Tags
             {
-                "LightMode" = "UniversalForward"
+                "LightMode" = "ToonForward"
             }
 
             HLSLPROGRAM

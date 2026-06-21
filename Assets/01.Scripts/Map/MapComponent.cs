@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MapComponent : MonoBehaviour
 {
-    int stageNum;
+    protected int stageNum;
 
-    public virtual string StageInfo {get => $"STAGE {stageNum}"; }
+    public virtual string StageInfo {get => $"STAGE {stageNum + 1}"; }
 
     MapComponent nextMap;
 

@@ -29,13 +29,13 @@ public class MapComponent_Basic : MapComponent
 
     IEnumerator StartEnemySpawn()
     {
-        currentEnemyCount = enemySpawnCount;
+        currentEnemyCount = enemySpawnCount + (int)(stageNum * 1.5f);
 
         for(int i = 0; i < enemySpawnCount; i++)
         {
 
             Vector3 spawnPos = enemySpawnPos[Random.Range(0, enemySpawnPos.Length)].position;
-            Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], spawnPos, Quaternion.identity);
+            Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, Mathf.Min(enemyPrefabs.Count, stageNum + 1))], spawnPos, Quaternion.identity);
 
             enemy.SetEnemy(this);
 

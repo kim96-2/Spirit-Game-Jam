@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8f182b5ae022a4faf6827fcce70430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Boss
-  hp: 300
+  hp: 2000
   destroyParticle: {fileID: 0}
   model: {fileID: 5897910525851589098}
   shooter1: {fileID: 5852318751366209705}
