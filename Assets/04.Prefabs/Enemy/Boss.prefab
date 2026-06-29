@@ -114,7 +114,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5365897962670676417, guid: b14ec7f39e2b7ff4cb16592dd65884d7, type: 3}
   shootPos: {fileID: 1099237251206207137}
   damage: 10
-  shootCount: 45
+  shootCount: 30
   angle: 180
 --- !u!114 &2233069569802564802
 MonoBehaviour:

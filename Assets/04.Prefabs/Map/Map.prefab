@@ -195,7 +195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7821800427980084392
 Transform:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: b366d954add55ff43a7d9511bb27c312, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 21bb0eb47c5790c46861afed1a0619ec, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &5576956447021793957
 GameObject:
@@ -1313,8 +1313,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 79.29649, y: 7.723668, z: 71.53712}
-  m_Center: {x: -1.3721313, y: -4.3601527, z: -0.19797897}
+  m_Size: {x: 79.29649, y: 8.075199, z: 71.53712}
+  m_Center: {x: -1.3721313, y: -4.184387, z: -0.19797897}
 --- !u!1001 &29297380379629413
 PrefabInstance:
   m_ObjectHideFlags: 0
